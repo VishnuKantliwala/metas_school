@@ -1,0 +1,46 @@
+<?php $page_id=''; include 'header.php' ?> 
+
+
+
+<!-- Breadcrumbs Start -->
+<div class="rs-breadcrumbs bg7 breadcrumbs-overlay">
+		    <div class="breadcrumbs-inner">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12 text-center">
+		                    <h1 class="page-title">  Council Circulars (CISCE) </h1>
+		                    <ul>
+		                        <li>
+		                            <a class="active" href="index.php">Home</a>
+		                        </li>
+		                        <li>  Council Circulars (CISCE) </li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!-- Breadcrumbs End -->
+
+
+        <div id="rs-learning-objectives" class="rs-learning-objectives pt-100 pb-70">
+            <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="courses-item">
+								<p>Council Circular for Classes 3 to 8 (Online Learning)</p>
+                                 <a href="#" target="_BLANK" class="btnCircle"><i style="color:#fff;font-size:20px" class="fa fa-file-pdf-o" aria-hidden="true"></i> Download PDF</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="courses-item">
+								<p>Council Circular for Classes 9 to 12 (Online Learning)</p>
+                                 <a href="#" target="_BLANK" class="btnCircle"><i style="color:#fff;font-size:20px" class="fa fa-file-pdf-o" aria-hidden="true"></i> Download PDF</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+       
+<?php include 'footer.php' ?>
