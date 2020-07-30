@@ -44,13 +44,13 @@
                                 <i class="fa fa-calendar"></i> 25-07-2020
 		                    	</div>
 		                    	<div class="course-button">
-		                    		<a href="#">Read More</a>
+		                    		<a href="current-opening-detail.php">Read More</a>
 		                    	</div>
 		                    </div>
 		                </div>						
                     </div>
                     
-                    <div class="col-lg-4 col-md-6 grid-item filter1">
+					<div class="col-lg-4 col-md-6 grid-item filter1">
 		                <div class="course-item">
 		                    <div class="course-body">
 		                    	<div class="course-desc">
@@ -66,12 +66,14 @@
                                 <i class="fa fa-calendar"></i> 25-07-2020
 		                    	</div>
 		                    	<div class="course-button">
-		                    		<a href="#">Read More</a>
+		                    		<a href="current-opening-detail.php">Read More</a>
 		                    	</div>
 		                    </div>
 		                </div>						
                     </div>
-                    <div class="col-lg-4 col-md-6 grid-item filter1">
+
+
+					<div class="col-lg-4 col-md-6 grid-item filter1">
 		                <div class="course-item">
 		                    <div class="course-body">
 		                    	<div class="course-desc">
@@ -87,12 +89,14 @@
                                 <i class="fa fa-calendar"></i> 25-07-2020
 		                    	</div>
 		                    	<div class="course-button">
-		                    		<a href="#">Read More</a>
+		                    		<a href="current-opening-detail.php">Read More</a>
 		                    	</div>
 		                    </div>
 		                </div>						
                     </div>
-                    <div class="col-lg-4 col-md-6 grid-item filter1">
+
+
+					<div class="col-lg-4 col-md-6 grid-item filter1">
 		                <div class="course-item">
 		                    <div class="course-body">
 		                    	<div class="course-desc">
@@ -108,12 +112,14 @@
                                 <i class="fa fa-calendar"></i> 25-07-2020
 		                    	</div>
 		                    	<div class="course-button">
-		                    		<a href="#">Read More</a>
+		                    		<a href="current-opening-detail.php">Read More</a>
 		                    	</div>
 		                    </div>
 		                </div>						
                     </div>
-                    <div class="col-lg-4 col-md-6 grid-item filter1">
+
+
+					<div class="col-lg-4 col-md-6 grid-item filter1">
 		                <div class="course-item">
 		                    <div class="course-body">
 		                    	<div class="course-desc">
@@ -129,12 +135,14 @@
                                 <i class="fa fa-calendar"></i> 25-07-2020
 		                    	</div>
 		                    	<div class="course-button">
-		                    		<a href="#">Read More</a>
+		                    		<a href="current-opening-detail.php">Read More</a>
 		                    	</div>
 		                    </div>
 		                </div>						
                     </div>
-                    <div class="col-lg-4 col-md-6 grid-item filter1">
+
+
+					<div class="col-lg-4 col-md-6 grid-item filter1">
 		                <div class="course-item">
 		                    <div class="course-body">
 		                    	<div class="course-desc">
@@ -150,11 +158,11 @@
                                 <i class="fa fa-calendar"></i> 25-07-2020
 		                    	</div>
 		                    	<div class="course-button">
-		                    		<a href="#">Read More</a>
+		                    		<a href="current-opening-detail.php">Read More</a>
 		                    	</div>
 		                    </div>
 		                </div>						
-					</div>
+                    </div>
 
 
 			    </div>

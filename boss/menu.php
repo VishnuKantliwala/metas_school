@@ -132,7 +132,7 @@
                             <li>
                                 <a href="categoryview.php">
                                     <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Product </span>
+                                    <span> Extramarks Online Learning </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">

@@ -7,7 +7,7 @@
             <div class="row footer-contact-desc">
                 <div class="col-md-4">
                     <div class="contact-inner">
-                        <i class="fa fa-map-marker"></i>
+                        <i class="color2 fa fa-map-marker"></i>
                         <h4 class="contact-title">Address</h4>
                         <p class="contact-desc">
                             503  Old Buffalo Street<br>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="contact-inner">
-                        <i class="fa fa-phone"></i>
+                        <i class="color2 fa fa-phone"></i>
                         <h4 class="contact-title">Phone Number</h4>
                         <p class="contact-desc">
                             +3453-909-6565<br>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="contact-inner">
-                        <i class="fa fa-map-marker"></i>
+                        <i class="color2 fa fa-envelope"></i>
                         <h4 class="contact-title">Email Address</h4>
                         <p class="contact-desc">
                             infoname@gmail.com<br>

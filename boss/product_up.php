@@ -170,7 +170,7 @@ global $finalarray;
                 </li>
 
                 <li>
-                    <h4 class="page-title-main">Product</h4>
+                    <h4 class="page-title-main">Extramarks Online Learning</h4>
                 </li>
     
             </ul>
@@ -194,7 +194,7 @@ global $finalarray;
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <h4 class="mt-0 header-title">Product Form</h4>
+                                <h4 class="mt-0 header-title">Extramarks Online Learning Form</h4>
                                 
                                 <form class="form-horizontal" method="post" action="prod_upload.php" id="myform"
                                     name="myform" enctype="multipart/form-data">
@@ -210,7 +210,7 @@ global $finalarray;
                                     <input type="hidden" name="cat_id" id="cat_id" value="<?php echo $row[3]; ?>" />
 
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">Category List</label>
                                         <div class="col-sm-10">
                                             <div class="panel-body">
@@ -232,21 +232,21 @@ global $finalarray;
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">Date</label>
                                         <div class="col-sm-12">
                                             <input type="text" class="form-control" id="date" name="date" placeholder="Date" value="<?php echo $row[13]; ?>">
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">Month</label>
                                         <div class="col-sm-12">
                                             <input type="text" class="form-control" id="month" name="month" placeholder="Month" value="<?php echo $row[14]; ?>">
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">Year</label>
                                         <div class="col-sm-12">
                                             <input type="text" class="form-control" id="year" name="year"
@@ -254,20 +254,20 @@ global $finalarray;
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-12 control-label">Product Name</label>
+                                        <label for="inputEmail3" class="col-sm-12 control-label">Extramarks Online Learning Name</label>
                                         <div class="col-sm-12">
-                                            <input type="text" class="form-control" id="product_name" name="product_name" value="<?php echo $row[1]; ?>" placeholder="Product Name">
+                                            <input type="text" class="form-control" id="product_name" name="product_name" value="<?php echo $row[1]; ?>" placeholder="Extramarks Online Learning Name">
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">Description</label>
                                         <div class="col-sm-12">
                                             <textarea class="ckeditor" cols="80" id="description" name="description" rows="10"><? echo $row[2];?></textarea>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">Image</label>
                                         <div class="col-sm-4">
                                             <input type="file" id="frontimg" name="frontimg" data-default-file="<?if($row[4]!=''){echo '../product/'.$row[4];}?>" class="dropify"/>
@@ -279,7 +279,7 @@ global $finalarray;
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">Multiple Images</label>
                                         <input type="hidden" class="form-control" id="frontimg1" name="frontimg1" placeholder="Multiple Images" value="<? echo $row['multi_images']; ?>">
                                         <div class="col-sm-4">
@@ -389,14 +389,14 @@ global $finalarray;
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">Product Video</label>
                                         <div class="col-sm-12">
                                             <textarea cols="5" rows="5" class="form-control" id="product_video" name="product_video" placeholder="Embeded code of the video"><?php echo $row[16]?></textarea>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">Product Map</label>
                                         <div class="col-sm-12">
                                             <textarea cols="5" rows="5" class="form-control" id="product_map" name="product_map" placeholder="Embeded code of the Map"><?php echo $row[17]?></textarea>

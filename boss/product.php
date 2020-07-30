@@ -152,7 +152,7 @@ else{
                 </li>
 
                 <li>
-                    <h4 class="page-title-main">Product</h4>
+                    <h4 class="page-title-main">Extramarks Online Learning</h4>
                 </li>
     
             </ul>
@@ -176,12 +176,12 @@ else{
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <h4 class="mt-0 header-title">Product Form</h4>
+                                <h4 class="mt-0 header-title">Extramarks Online Learning Form</h4>
                                 <form class="form-horizontal" method="post" action="prod_upload.php" id="myform"
                                         name="myform" enctype="multipart/form-data">
 
 
-                                        <div class="form-group">
+                                        <div class="form-group" style="display:none">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Category List</label>
                                             <div class="col-sm-12">
                                                 <div class="panel-body">
@@ -206,19 +206,19 @@ else{
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" style="display:none">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Date</label>
                                             <div class="col-sm-12">
                                                 <input type="text" class="form-control" id="date" name="date" placeholder="Date">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="display:none">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Month</label>
                                             <div class="col-sm-12">
                                                 <input type="text" class="form-control" id="month" name="month" placeholder="Month">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="display:none">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Year</label>
                                             <div class="col-sm-12">
                                                 <input type="text" class="form-control" id="year" name="year" placeholder="Year">
@@ -226,27 +226,27 @@ else{
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Product Name</label>
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Extramarks Online Learning Name</label>
                                             <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Product Name">
+                                                <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Extramarks Online Learning Name">
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" style="display:none">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Overview</label>
                                             <div class="col-sm-12">
                                                 <textarea class="ckeditor" cols="80" id="description" name="description" rows="10"></textarea>
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" style="display:none">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Image</label>
                                             <div class="col-sm-4">
                                                 <input type="file" id="frontimg" name="frontimg" class="dropify"/>
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" style="display:none">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Multiple
                                                 Images</label>
                                             <div class="col-sm-4">
@@ -282,14 +282,14 @@ else{
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" style="display:none">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Product Video</label>
                                             <div class="col-sm-12">
                                                 <textarea cols="5" rows="5" class="form-control" id="product_video" name="product_video" placeholder="Embeded code of the video"></textarea>
                                             </div>
                                         </div>
                                         
-                                        <div class="form-group">
+                                        <div class="form-group" style="display:none">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Product Map</label>
                                             <div class="col-sm-12">
                                                 <textarea cols="5" rows="5" class="form-control" id="product_map" name="product_map" placeholder="Embeded code of the Map"></textarea>

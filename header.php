@@ -81,31 +81,31 @@
 									<li class="menu-item-has-children">
 										<a href="javascript:void(0)">About</a>
 										<ul class="sub-menu">
-											<li><a href="javascript:void(0)"> Who we are  </a></li>
-											<li><a href="javascript:void(0)"> About School </a></li>
-											<li><a href="javascript:void(0)"> Administrative Body  </a></li>
-											<li><a href="javascript:void(0)"> Our Mission, Vision & Core Values  </a></li>																				
+											<li><a href="about.php"> Who we are  </a></li>
+											<li><a href="#"> About School </a></li>
+											<li><a href="administrative-body.php"> Administrative Body  </a></li>
+											<!-- <li><a href="javascript:void(0)"> Our Mission, Vision & Core Values  </a></li>	-->
 										</ul>
 									</li>
 	
 									<li class="menu-item-has-children">
 										<a href="javascript:void(0)">Academics</a>
 										<ul class="sub-menu">
-											<li><a href="javascript:void(0)"> Courses of Study  </a></li>
-											<li><a href="javascript:void(0)">  Examination Rules </a></li>													
-											<li><a href="javascript:void(0)"> Promotion Guidelines  </a></li>													
-											<li><a href="javascript:void(0)">  Counselling Day </a></li>													
-											<li><a href="javascript:void(0)"> Facilities </a></li>													
+											<li><a href="course.php"> Courses of Study  </a></li>
+											<li><a href="exam-rule.php">  Examination Rules </a></li>													
+											<li><a href="#"> Promotion Guidelines  </a></li>													
+											<li><a href="#">  Counselling Day </a></li>													
+											<li><a href="#"> Facilities </a></li>													
 										</ul>
 									</li>
 	
 									<li class="menu-item-has-children">
 										<a href="javascript:void(0)">Admission</a>
 										<ul class="sub-menu">
-                                            <li><a href="javascript:void(0)">Fee Structure</a> </li>
-											<li><a href="javascript:void(0)"> Admission Criteria  </a></li>
-											<li><a href="javascript:void(0)">  Procedure </a></li>
-											<li><a href="javascript:void(0)"> Rules & Regulations  </a></li>
+                                            <li><a href="fee.php">Fee Structure</a> </li>
+											<li><a href="add-criteria.php"> Admission Criteria  </a></li>
+											<li><a href="admission-process.php">  Procedure </a></li>
+											<li><a href="#"> Rules & Regulations  </a></li>
                                             <li><a href="javascript:void(0)">  Transport & Travel </a></li>
                                             <li><a href="javascript:void(0)">  Uniform & Books </a></li>
 										</ul>
@@ -116,44 +116,44 @@
                                     <li class="menu-item-has-children">
 										<a href="javascript:void(0)">School Life</a>
 										<ul class="sub-menu">
-											<li><a href="javascript:void(0)"> Overview  </a></li>
-											<li><a href="javascript:void(0)">  Timings of School Day </a></li>
-                                            <li><a href="javascript:void(0)">  Curriculum </a></li>	
-                                            <li><a href="javascript:void(0)"> Assessment & Monitoring </a></li>
+											<li><a href="#"> Overview  </a></li>
+											<li><a href="timing-school.php">  Timings of School Day </a></li>
+                                            <li><a href="#">  Curriculum </a></li>	
+                                            <!-- <li><a href="javascript:void(0)"> Assessment & Monitoring </a></li> -->
                                             <li class="menu-item-has-children">
                                                 <a href="javascript:void(0)">Co-curricular Activities</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="javascript:void(0)"> Houses  </a></li>
+                                                    <li><a href="house.php"> Houses  </a></li>
                                                     <li class="menu-item-has-children">
                                                         <a href="javascript:void(0)">Sports</a>
                                                         <ul class="sub-menu">
-                                                            <li><a href="javascript:void(0)"> Cricket  </a></li>
-                                                            <li><a href="javascript:void(0)">  Basketball </a></li>																															
-                                                            <li><a href="javascript:void(0)"> Football  </a></li>
-                                                            <li><a href="javascript:void(0)"> Volleyball  </a></li>
-                                                            <li><a href="javascript:void(0)"> Badminton  </a></li>
-                                                            <li><a href="javascript:void(0)"> Roller Skating  </a></li>
-                                                            <li><a href="javascript:void(0)"> Inline Skating</a></li>
-                                                            <li><a href="javascript:void(0)"> Kabbadi  </a></li>
+                                                            <li><a href="sport.php"> Cricket  </a></li>
+                                                            <li><a href="sport.php">  Basketball </a></li>																															
+                                                            <li><a href="sport.php"> Football  </a></li>
+                                                            <li><a href="sport.php"> Volleyball  </a></li>
+                                                            <li><a href="sport.php"> Badminton  </a></li>
+                                                            <li><a href="sport.php"> Roller Skating  </a></li>
+                                                            <li><a href="sport.php"> Inline Skating</a></li>
+                                                            <li><a href="sport.php"> Kabbadi  </a></li>
                                                         </ul>
                                                     </li>	
-                                                    <li><a href="javascript:void(0)"> School Band  </a></li>																													
+                                                    <li><a href="school-band.php"> School Band  </a></li>																													
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <a href="javascript:void(0)">Outdoor Learning</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="javascript:void(0)"> Field Trips  </a></li>                                                    																														
+                                                    <li><a href="outdoor-learning.php"> Field Trips  </a></li>                                                    																														
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <a href="javascript:void(0)">Leisure & recreation</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="javascript:void(0)"> Picnics </a></li>                                                    																														
-                                                    <li><a href="javascript:void(0)"> Excursions & Tours  </a></li>                                                    																														
+                                                    <li><a href="picnic.php"> Picnics </a></li>                                                    																														
+                                                    <li><a href="tour.php"> Excursions & Tours  </a></li>                                                    																														
                                                 </ul>
                                             </li>
-                                            <li><a href="javascript:void(0)"> Student Well-being  </a></li>
+                                            <!-- <li><a href="javascript:void(0)"> Student Well-being  </a></li> -->
 										</ul>
 									</li>
 
@@ -161,35 +161,35 @@
 									<li class="menu-item-has-children">
 										<a href="javascript:void(0)">Media</a>
 										<ul class="sub-menu">
-											<li><a href="javascript:void(0)"> Gallery  </a></li>
-											<li><a href="javascript:void(0)">  Videos </a></li>	
+											<li><a href="gallery.php"> Gallery  </a></li>
+											<li><a href="video.php">  Videos </a></li>	
                                             <li><a href="javascript:void(0)">  Crescent Magazine </a></li>																															
 										</ul>
 									</li>
 									<li class="menu-item-has-children">
 										<a href="javascript:void(0)">Online-Learning</a>
 										<ul class="sub-menu">
-											<li><a href="javascript:void(0)"> Extramarks Online Learning  </a></li>
-											<li><a href="javascript:void(0)">  Council Circulars (CISCE) </a></li>
+											<li><a href="extra-marks.php"> Extramarks Online Learning  </a></li>
+											<li><a href="council-circulars.php">  Council Circulars (CISCE) </a></li>
 											
                                                 
                                             <li class="menu-item-has-children">
                                                 <a href="javascript:void(0)">School Content 2020-21</a>
                                                 <ul class="sub-menu subtosub">
-                                                    <li><a href="javascript:void(0)"> Jr.Kg.  </a></li>
-                                                    <li><a href="javascript:void(0)"> Sr.Kg. </a></li>
-                                                    <li><a href="javascript:void(0)"> l std </a></li>	
-                                                    <li><a href="javascript:void(0)"> ll std </a></li>	
-                                                    <li><a href="javascript:void(0)"> lll std </a></li>	
-                                                    <li><a href="javascript:void(0)"> lV std </a></li>	
-                                                    <li><a href="javascript:void(0)"> V std </a></li>	
-                                                    <li><a href="javascript:void(0)"> Vl std </a></li>	
-                                                    <li><a href="javascript:void(0)"> Vll std </a></li>	
-                                                    <li><a href="javascript:void(0)"> Vlll std </a></li>	
-                                                    <li><a href="javascript:void(0)"> IX std </a></li>	
-                                                    <li><a href="javascript:void(0)"> X std </a></li>
-                                                    <li><a href="javascript:void(0)"> Xl std </a></li>
-                                                    <li><a href="javascript:void(0)"> Xll std </a></li>																																
+                                                    <li><a href="school-content.php"> Jr.Kg.  </a></li>
+                                                    <li><a href="school-content.php"> Sr.Kg. </a></li>
+                                                    <li><a href="school-content.php"> l std </a></li>	
+                                                    <li><a href="school-content.php"> ll std </a></li>	
+                                                    <li><a href="school-content.php"> lll std </a></li>	
+                                                    <li><a href="school-content.php"> lV std </a></li>	
+                                                    <li><a href="school-content.php"> V std </a></li>	
+                                                    <li><a href="school-content.php"> Vl std </a></li>	
+                                                    <li><a href="school-content.php"> Vll std </a></li>	
+                                                    <li><a href="school-content.php"> Vlll std </a></li>	
+                                                    <li><a href="school-content.php"> IX std </a></li>	
+                                                    <li><a href="school-content.php"> X std </a></li>
+                                                    <li><a href="school-content.php"> Xl std </a></li>
+                                                    <li><a href="school-content.php"> Xll std </a></li>																																
                                                 </ul>
                                             </li>
 
@@ -198,12 +198,12 @@
 									<li class="menu-item-has-children">
 										<a href="javascript:void(0)">Career</a>
 										<ul class="sub-menu">
-											<li><a href="javascript:void(0)"> HR Dept  </a></li>
-											<li><a href="javascript:void(0)">  Current Openings</a></li>																															
+											<li><a href="hr.php"> HR Dept  </a></li>
+											<li><a href="current-opening.php">  Current Openings</a></li>																															
 										</ul>
 									</li>
                                     <li><a href="javascript:void(0)">Alumni</a> </li>
-									<li><a href="javascript:void(0)">Contact</a> </li>
+									<li><a href="contact.php">Contact</a> </li>
                                             <!-- Home -->
 
 

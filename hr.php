@@ -152,7 +152,7 @@
 								</div>
 							</div>					        
 							<div class="form-group mb-0">
-								<input style="background: #01a9b4;color: #fff;" class="btn" type="submit" value="Submit Now">
+								<input style="background: #5bc6d0;color: #fff;" class="btn" type="submit" value="Submit Now">
 							</div>
 							   
 						</fieldset>
