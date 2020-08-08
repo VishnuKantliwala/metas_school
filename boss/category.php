@@ -78,7 +78,7 @@ else
                 </li>
 
                 <li>
-                    <h4 class="page-title-main">Category</h4>
+                    <h4 class="page-title-main">School Life</h4>
                 </li>
     
             </ul>
@@ -102,7 +102,7 @@ else
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <h4 class="mt-0 mb-2 header-title">Category Form</h4>
+                                <h4 class="mt-0 mb-2 header-title">School Life Form</h4>
                                 <form class="form-horizontal" method="post" action="prod_upload.php" id="myform" name="myform" enctype="multipart/form-data">
 									
                                     <input type="hidden" name="page" id="page" value="<? echo isset($_GET['page']);?>">
@@ -115,11 +115,19 @@ else
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Category Name</label>
+                                            <label for="inputEmail3" class="col-sm-2 control-label">School Life Name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="cat_name" name="cat_name" placeholder="Category Name">
+                                                <input type="text" class="form-control" id="cat_name" name="cat_name" placeholder="School Life Name">
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-12 control-label">Description</label>
+                                        <div class="col-sm-12">
+                                            <textarea class="ckeditor" id="description" name="description" rows="10"></textarea>
+                                        </div>
+                                    </div>
+                                    
                                         
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Image</label>

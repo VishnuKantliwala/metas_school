@@ -22,18 +22,18 @@ $page = $_GET['page'];
 		//end of image
 		
 		// pdf
-		@unlink('../download_pdf/'.$row[8]);
+		// @unlink('../download_pdf/'.$row[8]);
 		
-		//multiple images
-		$image_list = explode(',',$row[13]);
+		// //multiple images
+		// $image_list = explode(',',$row[13]);
 
-		foreach($image_list as $rowF)
-		{
-			//print_r($image_list);die;
-			$new_image_list = '';
-			@unlink('../blogF/big_img/'.$rowF);
-			@unlink('../blogF/'.$rowF);
-		}
+		// foreach($image_list as $rowF)
+		// {
+		// 	//print_r($image_list);die;
+		// 	$new_image_list = '';
+		// 	@unlink('../blogF/big_img/'.$rowF);
+		// 	@unlink('../blogF/'.$rowF);
+		// }
 		
 		
 		

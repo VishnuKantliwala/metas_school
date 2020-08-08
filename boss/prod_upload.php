@@ -20,7 +20,7 @@ $con->connectdb();
 				$meta_tag_title=$_POST['meta_tag_title'];
 				$meta_tag_description=$_POST['meta_tag_description'];
 				$meta_tag_keywords=$_POST['meta_tag_keywords'];					  		
-			
+				$description = $_POST['description'];
 
                 
 				$slug=$_POST['slug'];
@@ -34,7 +34,7 @@ $con->connectdb();
 			if($_FILES["frontimg"]['error'] > 0)// it means no new image selected insert previous one......
 				{
 				
-				$con->insertdb("UPDATE `tbl_category` SET cat_name='".$cat_name."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where cat_id=".$cat_id."");
+				$con->insertdb("UPDATE `tbl_category` SET cat_description='".$description."', cat_name='".$cat_name."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where cat_id=".$cat_id."");
 				}
 				else
 				{
@@ -43,7 +43,7 @@ $con->connectdb();
 			    @unlink("../category/". $frontimg2);
 				$catImage = createImage('frontimg',"../category/");
 
-				$con->insertdb("UPDATE `tbl_category` SET cat_name='".$cat_name."',cat_image='".$catImage."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where cat_id=".$cat_id."");
+				$con->insertdb("UPDATE `tbl_category` SET cat_description='".$description."', cat_name='".$cat_name."',cat_image='".$catImage."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where cat_id=".$cat_id."");
 				}
 
 			// end of image
@@ -68,14 +68,14 @@ $con->connectdb();
 					
 
 				$con->insertdb(
-				"UPDATE `tbl_category` SET cat_name='".$cat_name."',multi_images='".$final."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where cat_id=".$cat_id.""
+				"UPDATE `tbl_category` SET cat_description='".$description."', cat_name='".$cat_name."',multi_images='".$final."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where cat_id=".$cat_id.""
 				);
 					
 				}
 				else
 				{
 				$con->insertdb(
-				"UPDATE `tbl_category` SET cat_name='".$cat_name."',multi_images='".$frontimg1."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where cat_id=".$cat_id.""
+				"UPDATE `tbl_category` SET cat_description='".$description."', cat_name='".$cat_name."',multi_images='".$frontimg1."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where cat_id=".$cat_id.""
 				);
 			    }
 
@@ -181,6 +181,7 @@ $con->connectdb();
 	   
 	   		$cat_parent_id=$_POST['cat_parent_id'];
 			$page = $_POST['page'];
+			$description = $_POST['description'];
 			$cat_name=$_POST['cat_name'];
 			$meta_tag_title=$_POST['meta_tag_title'];
 			$meta_tag_description=$_POST['meta_tag_description'];
@@ -205,8 +206,8 @@ $con->connectdb();
 			//-------------------
 			
 			
-			$con->insertdb("insert into tbl_category(cat_parent_id,cat_name,cat_image,multi_images,meta_tag_title, meta_tag_description, meta_tag_keywords,slug) 
-			values(".$cat_parent_id.",'".$cat_name."','".$catImage."','".$images_name."', '".$meta_tag_title."', '".$meta_tag_description."', '".$meta_tag_keywords."', '".$slug."')");
+			$con->insertdb("insert into tbl_category(cat_parent_id,cat_description,cat_name,cat_image,multi_images,meta_tag_title, meta_tag_description, meta_tag_keywords,slug) 
+			values(".$cat_parent_id.",'".$description."','".$cat_name."','".$catImage."','".$images_name."', '".$meta_tag_title."', '".$meta_tag_description."', '".$meta_tag_keywords."', '".$slug."')");
 			header("location: categoryview.php?page=$page");
 		}
 	   

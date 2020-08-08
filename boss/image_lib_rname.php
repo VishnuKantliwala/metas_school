@@ -58,6 +58,36 @@ function make_thumb($src,$dest,$desired_width,$ext)
 
 // end of thumb images			
 
+function createVIDEO($inputName, $uploadDir)
+{
+
+	if ( isset( $inputName ) ) 
+	{
+		if ($_FILES[$inputName]['type'] == "video/mp4") 
+		{
+			$source_file = $_FILES[$inputName]['tmp_name'];
+
+			$namearr=explode(".",$_FILES[$inputName]['name']);
+			$name=$namearr[0].rand(10000, 99999).'.mp4';
+
+			$dest_file = $uploadDir.$name;
+
+			if (file_exists($dest_file)) {
+				print "The file name already exists!!";
+			}
+			else {
+				move_uploaded_file( $source_file, $dest_file )
+				or die ("Error!!");
+				if($_FILES[$inputName]['error'] == 0) 
+				{
+					return $name;
+				}
+			}
+		}
+	}
+}
+
+
 function createImage($inputName, $uploadDir)
 {
 

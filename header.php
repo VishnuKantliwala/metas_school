@@ -1,16 +1,95 @@
+<?php
+    include 'connect.php';
+    include 'navigationfun.php';
+    $cn=new connect();
+    $cn->connectdb();
+    $sql = $cn->selectdb("SELECT * FROM  `tbl_page` where page_id=$page_id" );
+    // echo mysqli_num_rows($sql2);
+       if (mysqli_num_rows($sql) > 0) 
+       {
+          $row1 = mysqli_fetch_assoc($sql);
+       }
+    
+       if(isset($_GET['id']))
+       {
+          $sql = $cn->selectdb("SELECT meta_tag_title,meta_tag_description,meta_tag_keywords FROM  `tbl_gallery` where slug='".$_GET['id']."'" );
+          if (mysqli_num_rows($sql) > 0) 
+          {
+             $row1 = mysqli_fetch_assoc($sql);
+             
+             
+          }
+       }
+       if(isset($_GET['pid']))
+       {
+          $sql = $cn->selectdb("SELECT meta_tag_title,meta_tag_description,meta_tag_keywords FROM  `tbl_product` where slug='".$_GET['pid']."'" );
+          if (mysqli_num_rows($sql) > 0) 
+          {
+             $row1 = mysqli_fetch_assoc($sql);
+             
+             
+          }
+       }
+       if(isset($_GET['bid']))
+       {
+          $sql = $cn->selectdb("SELECT meta_tag_title,meta_tag_description,meta_tag_keywords FROM  `tbl_blog` where slug='".$_GET['bid']."'" );
+          if (mysqli_num_rows($sql) > 0) 
+          {
+             $row1 = mysqli_fetch_assoc($sql);
+             
+             
+          }
+       }
+       if(isset($_GET['cid']))
+       {
+          $sql = $cn->selectdb("SELECT meta_tag_title,meta_tag_description,meta_tag_keywords FROM  `tbl_category` where slug='".$_GET['cid']."'" );
+          if (mysqli_num_rows($sql) > 0) 
+          {
+             $row1 = mysqli_fetch_assoc($sql);
+             
+             
+          }
+       }
+       $qry="SELECT * FROM tbl_contact";
+       $result=$cn->selectdb($qry);
+       $a="";$p="";$e="";$oh="";
+       if(dbNumRows($result) > 0) {
+          $row = dbFetchAssoc($result);
+          extract($row);
+          $a=strip_tags($contact_desc);
+          $p=$contact_no;
+          $e=$email;
+          $oh=$opening_hours;
+       }
+    ?>
 <!DOCTYPE html>
 <html lang="zxx">
  <head>
         <!-- meta tag -->
         <meta charset="utf-8">
-        <title>METAS ADVENTIST SCHOOL</title>
-        <meta name="description" content="">
+        <title><?echo $row1['meta_tag_title']?> || METAS ADVENTIST SCHOOL</title>
+        <meta name="description" content="<?echo $row1['meta_tag_description']?>">
+        <meta name="keywords" content="<?echo $row1['meta_tag_keywords']?>">
+        <meta name="title" content="<?echo $row1['meta_tag_title']?>">
         <!-- responsive tag -->
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?php
+    	$cn->setdomain();
+		?>
         <!-- favicon -->
-        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+
+        <?php
+    $qry="SELECT image_name FROM tbl_favicon";
+    $result=$cn->selectdb($qry);
+    if($cn->numRows($result)>0){     
+        $row=$cn->fetchAssoc($result)
+?> 
+
+        <link rel="apple-touch-icon" href="favicon/big_img/<?php echo $row['image_name'];  ?>">
+        <link rel="shortcut icon" href="favicon/big_img/<?php echo $row['image_name'];  ?>" />
+
+    <?php } ?>
         <!-- bootstrap v4 css -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <!-- font-awesome css -->
@@ -65,9 +144,16 @@
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-3 col-md-12">
+                             <?php
+                                    $qry="SELECT image_name FROM tbl_logo where logo_id=1";
+                                    $result=$cn->selectdb($qry);
+                                    if($cn->numRows($result)>0){     
+                                    $row=$cn->fetchAssoc($result);
+                                ?> 
                                 <div class="logo-area">
-                                    <a href="index.php"><img style="width:215px;" src="img/logo-white.png" alt="logo"></a>
+                                    <a href="Home/"><img style="width:215px;" src="logo/big_img/<?php echo $row['image_name']; ?>" alt="logo"></a>
                                 </div>
+                                    <?php } ?>
                             </div>
                             <div class="col-lg-9 col-md-12">
                                 <div class="main-menu">

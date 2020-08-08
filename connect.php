@@ -179,6 +179,19 @@ private $_host = "localhost";
 		}
 	}
 	
+	function fetchAssoc($sql)
+	{
+		return mysqli_fetch_assoc($sql);
+	}
+	function fetchArray($sql)
+	{
+		return mysqli_fetch_array($sql);
+	}
+	function numRows($sql)
+	{
+		return mysqli_num_rows($sql);
+	}
+
 	 // close opened html tags
     function closetags ( $html )
         {

@@ -13,7 +13,7 @@ require('./Classes/PHPExcel.php');
 $cn=new connect();
 $cn->connectdb();
 
-$pageID= 'page3';
+$pageID= 'page90';
 
 if(isset($_GET['parentid']))
 {
@@ -330,7 +330,7 @@ echo "<script>alert('No file selected..');</script>";
                 </li>
 
                 <li>
-                    <h4 class="page-title-main">Category</h4>
+                    <h4 class="page-title-main">School Life</h4>
                 </li>
     
             </ul>
@@ -354,7 +354,7 @@ echo "<script>alert('No file selected..');</script>";
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <h4 class="mt-0 header-title">Category View</h4>
+                                <h4 class="mt-0 header-title">School Life View</h4>
                                 <?php
 									if(isset($_POST['delete']))
 									{
@@ -373,7 +373,7 @@ echo "<script>alert('No file selected..');</script>";
                                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <a href="category.php?parentid=<?php echo $parentid; ?>" class="btn btn-success m-b-sm mt-2 mb-2">Add Category</a>
+                                            <a href="category.php?parentid=<?php echo $parentid; ?>" class="btn btn-success m-b-sm mt-2 mb-2">Add</a>
                                             <a href="sorting_category.php" class="btn btn-success m-b-sm mt-2 mb-2">Sorting</a>
                                             <input type="submit" class="btn btn-danger m-b-sm mt-2 mb-2"name="delete" value="delete"/>
                                         </div>

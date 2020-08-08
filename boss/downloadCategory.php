@@ -78,7 +78,7 @@ else
                 </li>
 
                 <li>
-                    <h4 class="page-title-main">Download Category</h4>
+                    <h4 class="page-title-main">School Content Category</h4>
                 </li>
     
             </ul>
@@ -102,7 +102,7 @@ else
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <h4 class="mt-0 mb-2 header-title">Download Category Form</h4>
+                                <h4 class="mt-0 mb-2 header-title">School Content Category Form</h4>
                                 <form class="form-horizontal" method="post" action="download_upload.php" id="myform" name="myform" enctype="multipart/form-data">
 									
                                     <input type="hidden" name="page" id="page" value="<? echo isset($_GET['page']);?>">

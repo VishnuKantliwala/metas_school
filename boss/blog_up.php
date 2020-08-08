@@ -204,7 +204,7 @@ while($rowC=mysqli_fetch_assoc($sqlC))
                                     <input type="hidden" name="blog_id" id="blog_id" value="<?php echo $row['blog_id']; ?>" />	
                                     <input type="hidden" name="cat_id" id="cat_id" value="<?php echo $row['cat_id']; ?>" />
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-2 control-label">Category List</label>
                                         <div class="col-sm-12">
                                             <div class="panel-body">
@@ -252,7 +252,7 @@ while($rowC=mysqli_fetch_assoc($sqlC))
                                     
                                     
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-12 control-label">Image</label>
+                                        <label for="inputEmail3" class="col-sm-12 control-label">Image (1 : 1)</label>
                                         <div class="col-sm-4">
                                             <input type="file" id="frontimg" name="frontimg" class="dropify" data-default-file="<? if($row['blog_image']!=''){echo "../blog/".$row['blog_image'];}?>"/>
                                             <? if($row['blog_image']!=''){?>
@@ -262,7 +262,7 @@ while($rowC=mysqli_fetch_assoc($sqlC))
                                         </div>
                                     </div>
                                     
-                                    <div class="form-group">
+                                    <div class="form-group" >
                                         <label for="inputEmail3" class="col-sm-12 control-label">Multiple Images</label>
                                         <input type="hidden" class="form-control" id="frontimg1" name="frontimg1" placeholder="Multiple Images" value="<? echo $row['multi_images']; ?>">
                                         <div class="col-sm-4">
@@ -313,7 +313,7 @@ while($rowC=mysqli_fetch_assoc($sqlC))
                                         </div>
                                     </div> -->
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">PDF File</label>
                                         <div class="col-sm-4">
                                             <input type="file" id="download_file" name="download_file" class="dropify"/>
@@ -330,9 +330,9 @@ while($rowC=mysqli_fetch_assoc($sqlC))
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-12 control-label">Video Link</label>
+                                        <label for="inputEmail3" class="col-sm-12 control-label">Tags (Tag1, Tag2, ...)</label>
                                         <div class="col-sm-12">
-                                            <textarea class="form-control" id="blog_video" name="blog_video" rows="10" placeholder="Embeded link from youtube."><?php echo $row['blog_video']; ?></textarea>
+                                            <textarea class="form-control" id="blog_video" name="blog_video" rows="10" placeholder="Enter tags here."><?php echo $row['blog_video']; ?></textarea>
                                         </div>
                                     </div>
                                     

@@ -44,6 +44,27 @@
                             </li>
 
                             <li>
+                                <a href="homeVideo.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Home Video </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="pageView.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Information </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="teamView.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span>  Administrative Body   </span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="projectView.php">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <!-- <span> Project </span>
@@ -70,14 +91,68 @@
                             </li>
 
                             <li>
+                                <a href="admissionView.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Admission </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="categoryview.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> School Life </span>
+                                </a>
+                            </li>                           
+
+                            
+
+                            <!-- <li>
+                                <a href="careerView.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Dynamic Menu </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="dmenuView.php">Category</a></li>
+                                    <li><a href="submenuView.php">Menu</a></li>
+                                </ul>
+                            </li> -->
+
+                           
+
+                            <li>
+                                <a href="#">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Extramarks Online Learning </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="productView.php">Extramarks Online Learning</a></li>
+                                    <li><a href="councilView.php">Council Circulars (CISCE) </a></li>                                   
+                                </ul>
+                            </li>
+
+                            <li>
                                 <a href="downloadCatView.php">
                                     <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Download </span>
+                                    <span> School Content </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="downloadCatView.php"> Category </a></li>
-                                    <li><a href="downloadView.php"> Download </a></li>
+                                    <li><a href="downloadView.php"> School Content </a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="blogCatView.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Blog </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="blogCatView.php">Category</a></li>
+                                    <li><a href="blogView.php">Blogs</a></li>
                                 </ul>
                             </li>
 
@@ -105,54 +180,20 @@
                                 </ul>
                             </li>
 
+
                             <li>
-                                <a href="careerView.php">
+                                <a href="eventView.php">
                                     <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Dynamic Menu </span>
-                                    <span class="menu-arrow"></span>
+                                    <span> Event </span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="dmenuView.php">Category</a></li>
-                                    <li><a href="submenuView.php">Menu</a></li>
-                                </ul>
                             </li>
 
                             <li>
-                                <a href="careerView.php">
+                                <a href="openingsView.php">
                                     <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Career </span>
-                                    <span class="menu-arrow"></span>
+                                    <span> Current Opening </span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="careerView.php">Career's</a></li>
-                                    <li><a href="careerInfoView.php">Applicants</a></li>
-                                </ul>
                             </li>
-
-                            <li>
-                                <a href="categoryview.php">
-                                    <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Extramarks Online Learning </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="categoryview.php">Category</a></li>
-                                    <li><a href="productView.php">Product</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="blogCatView.php">
-                                    <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Blog </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="blogCatView.php">Category</a></li>
-                                    <li><a href="blogView.php">Blogs</a></li>
-                                </ul>
-                            </li>
-
                             
                             <li>
                                 <a href="sliderView.php">
@@ -161,12 +202,7 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="pageView.php">
-                                    <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Information </span>
-                                </a>
-                            </li>
+                           
 
                             <li>
                                 <a href="contactView.php">
@@ -201,19 +237,26 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="teamView.php">
-                                    <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Team </span>
-                                </a>
-                            </li>
+                            
 
                             <li>
+                                <a href="careerView.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Career </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="careerView.php">Career's</a></li>
+                                    <li><a href="careerInfoView.php">Applicants</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- <li>
                                 <a href="faqView.php">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> FAQ's </span>
                                 </a>
-                            </li>
+                            </li> -->
 
                             <li>
                                 <a href="socialView.php">
@@ -222,7 +265,7 @@
                                 </a>
                             </li>
 
-                            <li>
+                            <!-- <li>
                                 <a href="newsletterView.php">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Newsletter </span>
@@ -232,7 +275,7 @@
                                     <li><a href="newsletterView.php">NewsLetters</a></li>
                                     <li><a href="newslettersubscriberView.php">Email</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
 
                             <li>
                                 <a href="changepass.php">

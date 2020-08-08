@@ -18,8 +18,8 @@ $cn->connectdb();
 	while($row = mysqli_fetch_row($sql))
 	{
 		//image
-		@unlink('../product/big_img/'.$row[4]);
-		@unlink('../product/'.$row[4]);
+		@unlink('../council/big_img/'.$row[4]);
+		@unlink('../council/'.$row[4]);
 		//end of image
 		
 		// pdf
@@ -32,8 +32,8 @@ $cn->connectdb();
 		{
 			//print_r($image_list);die;
 			$new_image_list = '';
-			@unlink('../productF/big_img/'.$rowF);
-			@unlink('../productF/'.$rowF);
+			@unlink('../councilF/big_img/'.$rowF);
+			@unlink('../councilF/'.$rowF);
 		}
 		
 		
@@ -43,7 +43,7 @@ $cn->connectdb();
 	$cn->selectdb("delete from tbl_council where product_id=$id");
 
 	//$cn->Deletedata($tablename,$primarykey,$id);
-	header("location: productView.php?page=$page");
+	header("location: councilView.php?page=$page");
 	}
 	function deleteProduct($id)
 	{
@@ -58,8 +58,8 @@ $cn->connectdb();
 	while($row = mysqli_fetch_row($sql))
 	{
 		//image
-		@unlink('../product/big_img/'.$row[4]);
-		@unlink('../product/'.$row[4]);
+		@unlink('../council/big_img/'.$row[4]);
+		@unlink('../council/'.$row[4]);
 		//end of image
 		
 		// pdf
@@ -72,8 +72,8 @@ $cn->connectdb();
 		{
 			//print_r($image_list);die;
 			$new_image_list = '';
-			@unlink('../productF/big_img/'.$rowF);
-			@unlink('../productF/'.$rowF);
+			@unlink('../councilF/big_img/'.$rowF);
+			@unlink('../councilF/'.$rowF);
 		}
 		
 		

@@ -147,7 +147,7 @@ else
                                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <a href="page.php?parentid=<?php echo $parentid; ?>" class="btn btn-success m-b-sm mt-2 mb-2">Add Information</a>
+                                            <a href="page.php?parentid=<?php echo $parentid; ?>" class="btn btn-success m-b-sm mt-2 mb-2">Add</a>
                                             <a href="sorting_page.php" class="btn btn-success m-b-sm mt-2 mb-2">Sorting</a>
                                             <input type="submit" class="btn btn-danger m-b-sm mt-2 mb-2"name="delete" value="delete"/>
                                         </div>

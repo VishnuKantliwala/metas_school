@@ -274,18 +274,18 @@ function deleteblog($id){
 		//end of image
 		
 		// pdf
-		@unlink('../download_pdf/'.$row[8]);
+		// @unlink('../download_pdf/'.$row[8]);
 		
-		//multiple images
-		$image_list = explode(',',$row[13]);
+		// //multiple images
+		// $image_list = explode(',',$row[13]);
 
-		foreach($image_list as $rowF)
-		{
-			//print_r($image_list);die;
-			$new_image_list = '';
-			@unlink('../blogF/big_img/'.$rowF);
-			@unlink('../blogF/'.$rowF);
-		}
+		// foreach($image_list as $rowF)
+		// {
+		// 	//print_r($image_list);die;
+		// 	$new_image_list = '';
+		// 	@unlink('../blogF/big_img/'.$rowF);
+		// 	@unlink('../blogF/'.$rowF);
+		// }
 		
 		
 		
@@ -408,7 +408,7 @@ function deleteblog($id){
                                         <tr>
                                             <th><input type="checkbox" id="checkall" class="checkall" name="sample"/> Select all</th>
                                             <th>Name</th>
-                                            <th>Category</th>
+                                            <!-- <th>Category</th> -->
                                             <th>Copy</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
@@ -418,7 +418,7 @@ function deleteblog($id){
                                         <tr>
                                             <th><input type="checkbox" id="checkall" class="checkall" name="sample"/> Select all</th>
                                             <th>Name</th>
-                                            <th>Category</th>
+                                            <!-- <th>Category</th> -->
                                             <th>Copy</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
@@ -440,11 +440,11 @@ function deleteblog($id){
                                             <tr>
                                                 <td><input type="checkbox" name="chkbox[]" id="chkbox" class="chkbox"  value="<?echo $blog_id?>"/></td>
 												<td><?php echo $blog_name ?></td>
-												<td>
+												<!-- <td>
                                                     <? for($i=0; $i<$cnt;$i++){ ?>
 														<?php echo $cn->getname('tbl_blogcategory','cat_id','cat_name',$catID[$i]); ?>,
 													<? } ?>
-												</td>
+												</td> -->
                                                 <td>
 												    <a href='blog_copy.php?id=<?php echo $blog_id ?>&page=<? echo isset($_GET['page']);?>'><i class="fa fa-copy"></i></a>
                                                 </td>

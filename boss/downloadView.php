@@ -319,7 +319,7 @@ echo "<script>alert('No file selected..');</script>";
                 </li>
 
                 <li>
-                    <h4 class="page-title-main">Download</h4>
+                    <h4 class="page-title-main">School Content</h4>
                 </li>
     
             </ul>
@@ -343,7 +343,7 @@ echo "<script>alert('No file selected..');</script>";
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <h4 class="mt-0 header-title">Download View</h4>
+                                <h4 class="mt-0 header-title">School Content View</h4>
                                 <?php
                                     if(isset($_POST['delete']))
                                     {

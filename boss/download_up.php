@@ -161,7 +161,7 @@ $finalarray= array_filter($arraycat_id);
                 </li>
 
                 <li>
-                    <h4 class="page-title-main">Download</h4>
+                    <h4 class="page-title-main">School Content</h4>
                 </li>
     
             </ul>
@@ -185,7 +185,7 @@ $finalarray= array_filter($arraycat_id);
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <h4 class="mt-0 header-title">Download Form</h4>
+                                <h4 class="mt-0 header-title">School Content Form</h4>
                                 <form class="form-horizontal" method="post" action="download_upload.php" id="myform" name="myform" enctype="multipart/form-data">
                                     <input type="hidden" name="page" id="page" value="<? echo isset($_GET['page']);?>">
                                     
@@ -224,9 +224,9 @@ $finalarray= array_filter($arraycat_id);
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-12 control-label">Download Name</label>
+                                        <label for="inputEmail3" class="col-sm-12 control-label">School Content Name</label>
                                         <div class="col-sm-12">
-                                            <input type="text" class="form-control" id="download_name" name="download_name" value="<?php echo $row[1]; ?>" placeholder="Download Name">
+                                            <input type="text" class="form-control" id="download_name" name="download_name" value="<?php echo $row[1]; ?>" placeholder="School Content Name">
                                         </div>
                                     </div>
                                     

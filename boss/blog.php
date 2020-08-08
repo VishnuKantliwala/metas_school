@@ -164,7 +164,8 @@ else{
                             <div class="card-box">
                                 <h4 class="mt-0 header-title">New Blog Form</h4>
                                 <form class="form-horizontal" method="post" action="blog_upload.php" id="myform" name="myform" enctype="multipart/form-data">
-                                    <div class="form-group">
+                                    
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-2 control-label">Category List</label>
                                         <div class="col-sm-12">
                                             <div class="panel-body">
@@ -212,13 +213,13 @@ else{
                                     
                                     
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-12 control-label">Image</label>
+                                        <label for="inputEmail3" class="col-sm-12 control-label">Image (1 : 1)</label>
                                         <div class="col-sm-4">
                                             <input type="file" id="frontimg" name="frontimg" class="dropify"/>
                                         </div>
                                     </div>
                                     
-                                    <div class="form-group">
+                                    <div class="form-group" >
                                         <label for="inputEmail3" class="col-sm-12 control-label">Multiple Images</label>
                                         <div class="col-sm-4">
                                             <input type="file" id="image_title" name="image_title[]" multiple class="dropify"/>
@@ -233,7 +234,7 @@ else{
                                         </div>
                                     </div> -->
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <label for="inputEmail3" class="col-sm-12 control-label">PDF File</label>
                                         <div class="col-sm-4">
                                             <input type="file" id="download_file" name="download_file" class="dropify"/>
@@ -241,9 +242,9 @@ else{
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-12 control-label">Video Link</label>
+                                        <label for="inputEmail3" class="col-sm-12 control-label">Tags (Tag1, Tag2, ...)</label>
                                         <div class="col-sm-12">
-                                            <textarea class="form-control" id="blog_video" name="blog_video" rows="10" placeholder="Embeded link from youtube."></textarea>
+                                            <textarea class="form-control" id="blog_video" name="blog_video" rows="10" placeholder="Enter tags here."></textarea>
                                         </div>
                                     </div>
                                     

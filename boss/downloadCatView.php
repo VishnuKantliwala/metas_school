@@ -495,7 +495,7 @@ function _deleteImage($id)
                 </li>
 
                 <li>
-                    <h4 class="page-title-main">Download Category</h4>
+                    <h4 class="page-title-main">School Content Category</h4>
                 </li>
     
             </ul>
@@ -519,7 +519,7 @@ function _deleteImage($id)
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <h4 class="mt-0 header-title">Download Category View</h4>
+                                <h4 class="mt-0 header-title">School Content Category View</h4>
                                 <?php
                                     if(isset($_POST['delete']))
                                     {
