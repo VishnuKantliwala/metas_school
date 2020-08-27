@@ -1,6 +1,6 @@
 Options +FollowSymlinks
-ErrorDocument 404 http://127.0.0.1/SparkEvent/404/
-ErrorDocument 500 http://127.0.0.1/SparkEvent/500/
+ErrorDocument 404 http://localhost/metas/metas_school/404
+ErrorDocument 500 http://localhost/metas/metas_school/500
 
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -8,8 +8,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 
 
-RewriteRule ^500//?  500.php [L]
-RewriteRule ^404//?  404.php [L]
+RewriteRule ^500/?  500.php [L]
+RewriteRule ^404/?  404.php [L]
 RewriteRule ^Home//?  index.php [L]
 RewriteRule ^About-Us//? about.php [L]
 RewriteRule ^Contact-Us//? contact.php [L]
@@ -18,11 +18,70 @@ RewriteRule ^Blog-Detail/(.*)//? blog_detail.php?bid=$1 [L]
 RewriteRule ^Services//? service.php [L]
 RewriteRule ^Photos//? gallery.php [L]
 RewriteRule ^Videos//? video.php [L]
-
-
-
 RewriteRule ^Event-Detail/(.*)//? event-detail.php?eid=$1 [L]
 
+# About
+RewriteRule ^who-we-are/? about.php [L]
+RewriteRule ^about-school/? about-school.php [L]
+RewriteRule ^administrative-body/? administrative-body.php [L]
+
+# Academics
+RewriteRule ^examination-rules/? exam-rule.php [L]
+RewriteRule ^academics/(.*)/? academics.php?academics_id=$1 [L]
+RewriteRule ^courses/(.*)/? course.php?course_id=$1 [L]
+RewriteRule ^courses/? courses.php [L]
+
+# RewriteRule ^promotion-guidelines/? promotion-guidelines.php [L]
+# RewriteRule ^counselling-day/? counselling-day.php [L]
+# RewriteRule ^facilities/? facilities.php [L]
+
+# Admission
+RewriteRule ^fee-structure/? fee.php [L]
+RewriteRule ^admissions/(.*)/? admission.php?admission_id=$1 [L]
+
+# School Life
+RewriteRule ^school-life/? school-life.php [L]
+RewriteRule ^school-timings/? school-timings.php [L]
+RewriteRule ^curriculum/? curriculum.php [L]
+RewriteRule ^houses/(.*)/? house-detail.php?house_id=$1 [L]
+RewriteRule ^houses/? house.php [L]
+RewriteRule ^sports/(.*)/? sport.php?sport_id=$1 [L]
+
+RewriteRule ^school-band/(.*)/? band-detail.php?band_id=$1 [L]
+RewriteRule ^school-band/? school-band.php [L]
+
+RewriteRule ^field-trips/(.*)/? outdoor-learning-detail.php?trip_id=$1 [L]
+RewriteRule ^field-trips/? outdoor-learning.php [L]
+RewriteRule ^picnics/(.*)/? picnic-detail.php?picnic_id=$1 [L]
+RewriteRule ^picnics/? picnic.php [L]
+RewriteRule ^tours/(.*)/? tour-detail.php?tour_id=$1 [L]
+RewriteRule ^tours/? tour.php [L]
+
+
+
+
+# Alumni
+RewriteRule ^alumni-list/(.*)/? alumni-detail.php?aid=$1 [L]
+RewriteRule ^alumni-list/? alumni.php [L]
+RewriteRule ^alumni-registration/? alumni-registration.php [L]
+
+# Career
+RewriteRule ^hr-department/? hr-department.php [L]
+RewriteRule ^current-openings/(.*)/? current-opening-detail.php?coid=$1 [L]
+RewriteRule ^current-openings/? current-opening.php [L]
+
+# Online Learning
+RewriteRule ^extramarks-online-learning/? extra-marks.php [L]
+RewriteRule ^council-circulars/? council-circulars.php [L]
+RewriteRule ^school-content/(.*)/? school-content.php?scid=$1 [L]
+
+
+# Media
+RewriteRule ^videos/? video.php [L]
+RewriteRule ^photo-gallery/(.*)/? gallery-category.php?gcid=$1 [L]
+RewriteRule ^photo-gallery/? gallery-category.php [L]
+RewriteRule ^gallery-detail/(.*)/? gallery.php?gcid=$1 [L]
+RewriteRule ^crescent-magazine/? magazine.php [L]
 
 Options All -Indexes
 <files .htaccess>

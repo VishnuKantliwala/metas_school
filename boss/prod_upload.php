@@ -115,7 +115,7 @@ $con->connectdb();
 			//pdf
 			//-----------------------------
 			
-			$pdf_file = createMultiPDF('download_file', "../download_pdf/");			
+			$pdf_file = createPDF('download_file', "../download_pdf/");			
 			//--------------------		
 			//end of pdf
 			//--------------------
@@ -261,56 +261,52 @@ $con->connectdb();
 
 			// end of image
 			
-			//------------------------
-			//pdf
-			//------------------------
+			// ------------------------
+			// pdf
+			// ------------------------
 			
-			// if($_FILES["download_file"]["name"]=="")
-			// {
+			if($_FILES["download_file"]["name"]!="")
+			{
 			
-			// 	$con->insertdb("UPDATE `tbl_product` SET product_name='".$product_name."',description='".$description."',cat_id='".$catID."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."'  where product_id='".$product_id."'");
-			// }
-			// else
-			// {
 			
-			// @unlink("../download_pdf/". $frontimgpdf2);
+				@unlink("../download_pdf/". $frontimgpdf2);
 
-			// $pdf_file = createPDF('download_file',"../download_pdf/");
+				$pdf_file = createPDF('download_file',"../download_pdf/");
 
-			// $con->insertdb("UPDATE `tbl_product` SET product_name='".$product_name."',description='".$description."',cat_id='".$catID."',pdf_file='".$pdf_file."' ,meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where product_id='".$product_id."'");
-			// }
+				$con->insertdb("UPDATE `tbl_product` SET pdf_file='".$pdf_file."' where product_id='".$product_id."'");
+			}
 
 			 		
-			//-----------------				
-			//end of pdf
-			//--------------------
+			// -----------------				
+			// end of pdf
+			// --------------------
 			
 			 		
 			//-----------------				
 			//multi pdf
 			//--------------------
 						
-			$size_sum_pdf = array_sum($_FILES['download_file']['size']);
-			echo "size sum pdf => ".$size_sum_pdf;
-			echo "hey im here";
-			if ($size_sum_pdf > 0) 
-			// if($_FILES["download_file"]["name"]=="")
-			{
-				echo "hey im here";
-				$pdf_file = createMultiPDF('download_file', "../download_pdf/");
-				$records=$con->selectdb("select * from tbl_product where product_id='".$product_id."'");
-				$row=mysqli_fetch_row($records);
-				//echo $row[2]."<br>";
-				//echo $images; die;
-				$final= $row[7].$pdf_file;
+			// $size_sum_pdf = array_sum($_FILES['download_file']['size']);
+			// echo "size sum pdf => ".$size_sum_pdf;
+			// echo "hey im here";
+			// if ($size_sum_pdf > 0) 
+			// // if($_FILES["download_file"]["name"]=="")
+			// {
+			// 	echo "hey im here";
+			// 	$pdf_file = createMultiPDF('download_file', "../download_pdf/");
+			// 	$records=$con->selectdb("select * from tbl_product where product_id='".$product_id."'");
+			// 	$row=mysqli_fetch_row($records);
+			// 	//echo $row[2]."<br>";
+			// 	//echo $images; die;
+			// 	$final= $row[7].$pdf_file;
 				
 				
-				$con->insertdb("UPDATE `tbl_product` SET product_name='".$product_name."',description='".$description."',cat_id='".$catID."', pdf_file='".$final."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."'  where product_id='".$product_id."'");
-			}
-			else
-			{
-				$con->insertdb("UPDATE `tbl_product` SET product_name='".$product_name."',description='".$description."',cat_id='".$catID."',pdf_file='".$frontimgpdf2."' ,meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where product_id='".$product_id."'");
-			}
+			// 	$con->insertdb("UPDATE `tbl_product` SET product_name='".$product_name."',description='".$description."',cat_id='".$catID."', pdf_file='".$final."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."'  where product_id='".$product_id."'");
+			// }
+			// else
+			// {
+			// 	$con->insertdb("UPDATE `tbl_product` SET product_name='".$product_name."',description='".$description."',cat_id='".$catID."',pdf_file='".$frontimgpdf2."' ,meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where product_id='".$product_id."'");
+			// }
 
 			 		
 			 		
@@ -474,6 +470,21 @@ if(isset($_GET["ProImage"]))
 	}
 		
 }
+if(isset($_GET["PDF"]))
+	{
+	//print_r($_POST);die;
+	$id= $_GET['id'];
+	$records=$con->selectdb("SELECT * FROM tbl_product where product_id=".$id."");
+	while($row=mysqli_fetch_array($records))
+	{
+	  @unlink('../download_pdf/'.$row['pdf_file']);
+
+	}
+	$con->selectdb("update tbl_product set pdf_file='' where product_id = '".$id."'");
+	header("location: product_up.php?product_id=".$id."&page=".$page);
+
+
+}	
 
 
 ?>

@@ -58,36 +58,6 @@ function make_thumb($src,$dest,$desired_width,$ext)
 
 // end of thumb images			
 
-function createVIDEO($inputName, $uploadDir)
-{
-
-	if ( isset( $inputName ) ) 
-	{
-		if ($_FILES[$inputName]['type'] == "video/mp4") 
-		{
-			$source_file = $_FILES[$inputName]['tmp_name'];
-
-			$namearr=explode(".",$_FILES[$inputName]['name']);
-			$name=$namearr[0].rand(10000, 99999).'.mp4';
-
-			$dest_file = $uploadDir.$name;
-
-			if (file_exists($dest_file)) {
-				print "The file name already exists!!";
-			}
-			else {
-				move_uploaded_file( $source_file, $dest_file )
-				or die ("Error!!");
-				if($_FILES[$inputName]['error'] == 0) 
-				{
-					return $name;
-				}
-			}
-		}
-	}
-}
-
-
 function createImage($inputName, $uploadDir)
 {
 
@@ -261,6 +231,72 @@ if ( isset( $inputName ) )
 	if ($_FILES[$inputName]['type'] == "application/pdf") 
 	{
 		$source_file = $_FILES[$inputName]['tmp_name'];
+
+		$namearr=explode(".",$_FILES[$inputName]['name']);
+		$name=$namearr[0].rand(10000, 99999).'.pdf';
+
+		$dest_file = $uploadDir.$name;
+
+		if (file_exists($dest_file)) {
+			print "The file name already exists!!";
+		}
+		else {
+			move_uploaded_file( $source_file, $dest_file )
+			or die ("Error!!");
+			if($_FILES[$inputName]['error'] == 0) 
+			{
+				return $name;
+			}
+		}
+	}
+	else {
+		if ( $_FILES[$inputName]['type'] != "application/pdf") 
+		{
+			print "Error occured while uploading file : ".$_FILES[$inputName]['name']."<br/>";
+			print "Invalid  file extension, should be pdf !!"."<br/>";
+			print "Error Code : ".$_FILES[$inputName]['error']."<br/>";
+		}
+	}
+}
+}
+
+function createVIDEO($inputName, $uploadDir)
+{
+
+	if ( isset( $inputName ) ) 
+	{
+		if ($_FILES[$inputName]['type'] == "video/mp4") 
+		{
+			$source_file = $_FILES[$inputName]['tmp_name'];
+
+			$namearr=explode(".",$_FILES[$inputName]['name']);
+			$name=$namearr[0].rand(10000, 99999).'.mp4';
+
+			$dest_file = $uploadDir.$name;
+
+			if (file_exists($dest_file)) {
+				print "The file name already exists!!";
+			}
+			else {
+				move_uploaded_file( $source_file, $dest_file )
+				or die ("Error!!");
+				if($_FILES[$inputName]['error'] == 0) 
+				{
+					return $name;
+				}
+			}
+		}
+	}
+}
+
+
+function createPPT($inputName, $uploadDir)
+{
+
+	if ( isset( $inputName ) ) 
+	{
+		
+		$source_file = $_FILES[$inputName]['tmp_name'];
 		$dest_file = $uploadDir.$_FILES[$inputName]['name'];
 
 		if (file_exists($dest_file)) {
@@ -274,16 +310,8 @@ if ( isset( $inputName ) )
 				return $_FILES[$inputName]['name'];
 			}
 		}
+		
 	}
-	else {
-		if ( $_FILES[$inputName]['type'] != "application/pdf") 
-		{
-			print "Error occured while uploading file : ".$_FILES[$inputName]['name']."<br/>";
-			print "Invalid  file extension, should be pdf !!"."<br/>";
-			print "Error Code : ".$_FILES[$inputName]['error']."<br/>";
-		}
-	}
-}
 }
 
 function createMultiIcon($inputName, $uploadDir,$i)

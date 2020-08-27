@@ -414,10 +414,23 @@
 	//canvus menu
 	var sidebarnavmenu = $('.sidebarnav_menu');
 	if(sidebarnavmenu.length){
-		$( ".sidebarnav_menu li.menu-item-has-children" ).on('click', function() {
-		  $(this).children( "ul" ).slideToggle( "slow", function() {
+		// $( ".sub_menu li.menu-item-has-children2 a" ).on('click', function() {
+		// 	console.log(this);
+		// 	$(this).next( "ul" ).slideToggle( "slow", function() {
+		// 	});
+		// 	return;
+		//   });
+
+
+		$( ".sidebarnav_menu li.menu-item-has-children a" ).on('click', function() {
+			console.log('in',this);
+		  $(this).next( "ul" ).slideToggle( "slow", function() {
 		  });
 		});
+
+		
+
+
 	}
 	
 

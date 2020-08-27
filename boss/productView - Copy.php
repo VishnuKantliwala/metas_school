@@ -367,7 +367,7 @@ echo "<script>alert('No file selected..');</script>";
                                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <a href="product.php" class="btn btn-success m-b-sm mt-2 mb-2">Add</a>
+                                            <!-- <a href="product.php" class="btn btn-success m-b-sm mt-2 mb-2">Add</a> -->
                                             <a href="sorting_product.php" class="btn btn-success m-b-sm mt-2 mb-2">Sort</a>
                                             <input type="submit" class="btn btn-danger m-b-sm mt-2 mb-2"name="delete" value="delete"/>
                                         </div>
@@ -380,7 +380,7 @@ echo "<script>alert('No file selected..');</script>";
                                         <tr>
                                             <th><input type="checkbox" id="checkall" class="checkall" name="sample"/> Select all</th>
                                             <th>Name</th>
-                                            <th>Category</th>
+                                            <!-- <th>Category</th> -->
                                             <th>Copy</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
@@ -390,7 +390,7 @@ echo "<script>alert('No file selected..');</script>";
                                         <tr>
                                             <th><input type="checkbox" id="checkall" class="checkall" name="sample"/> Select all</th>
                                             <th>Name</th>
-                                            <th>Category</th>
+                                            <!-- <th>Category</th> -->
                                             <th>Copy</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
@@ -413,11 +413,11 @@ echo "<script>alert('No file selected..');</script>";
                                             <tr>
                                                 <td><input type="checkbox" name="chkbox[]" id="chkbox" class="chkbox"  value="<?echo $product_id?>"/></td>
 												<td><?php echo $product_name ?></td>
-												<td><? for($i=0; $i<$cnt;$i++) 
+												<!-- <td><? for($i=0; $i<$cnt;$i++) 
 														{
 															echo $cn->getname('tbl_category','cat_id','cat_name',$catID[$i]); ?>,
                                                     <?  } ?>
-												</td>
+												</td> -->
                                                 <td>
 												    <a href='product_copy.php?id=<?php echo $product_id ?>&page=<? echo isset($_GET['page']);?>'><i class="fa fa-copy"></i></a>
                                                 </td>

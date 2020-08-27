@@ -68,7 +68,7 @@ if(isset($_POST['add']))
 		$con->insertdb("insert into tbl_addmore (`page_id`, `title`, `small_desc`, `extra_desc`, `extra_icon`) values('".$page_id."','".$title."','".$descsd."','".$desc."','".$multi_icons_image."')");
 		}
 	}
-	header("location:pageView.php");
+	header("location:pageView.php?parentid=".$page_parent_id);
 }
 
 if(isset($_POST['update']))
@@ -176,7 +176,9 @@ if(isset($_POST['update']))
 			}
 		}	
 	}
-	header("location:pageView.php?page=$page");
+	// header("location:pageView.php?page=$page");
+	header("location:pageView.php?parentid=".$page_parent_id);
+
 }
 
 //Delete

@@ -2602,10 +2602,17 @@ ul {
   padding-top: 0;
 }
 .rs-about-style8 ul li {
-  flex-basis: 34%;
+  flex-basis: 40%;
+  margin-right: 10%;
   position: relative;
   padding-left: 24px;
   padding-bottom: 7px;
+  border-right: 1px solid #00bcd4;
+}
+
+.rs-about-style8 ul li ul li {
+  
+  border:none !important;
 }
 .rs-about-style8 ul li:before {
   position: absolute;
@@ -2616,7 +2623,21 @@ ul {
   font-family: FontAwesome;
   color: #5bc6d0;
   transition: all .5s ease;
+  
 }
+
+.rs-about-style8 ul li ul li:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  content: "\f105";
+  font-family: FontAwesome;
+  color: #5bc6d0;
+  transition: all .5s ease;
+}
+
+
 .rs-about-style8 .author-section .course-author {
   display: flex;
   align-items: center;

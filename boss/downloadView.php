@@ -356,8 +356,8 @@ echo "<script>alert('No file selected..');</script>";
                                         while($row = mysqli_fetch_assoc($sql))
                                         {
                                             //image
-                                            @unlink('../product/big_img/'.$row['download_image']);
-                                            @unlink('../product/'.$row['download_image']);
+                                            @unlink('../download/big_img/'.$row['download_image']);
+                                            @unlink('../download/'.$row['download_image']);
                                             //end of image
                                             
                                             // pdf

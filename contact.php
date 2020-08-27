@@ -1,118 +1,186 @@
-<?php $page_id=''; include 'header.php' ?> 
+<?
+$page_id = 13;
+include_once("header.php");
+$sql = $cn->selectdb("select * from tbl_page where page_id =$page_id");
+$row = $cn->fetchAssoc($sql);
+extract($row);
+?>
 
 
 
 <!-- Breadcrumbs Start -->
-<div class="rs-breadcrumbs bg7 breadcrumbs-overlay">
-		    <div class="breadcrumbs-inner">
-		        <div class="container">
-		            <div class="row">
-		                <div class="col-md-12 text-center">
-		                    <h1 class="page-title">Contact Us</h1>
-		                    <ul>
-		                        <li>
-		                            <a class="active" href="index.php">Home</a>
-		                        </li>
-		                        <li>Contact Us</li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-		<!-- Breadcrumbs End -->
-
-
-
-        <div class="contact-page-section sec-spacer">
-        	<div class="container">
-        		
-        		<div class="row contact-address-section">
-    				<div class="col-md-4 pl-0">
-    					<div class="contact-info contact-address">
-    						<i class="fa fa-map-marker"></i>
-    						<h4>Address</h4>
-    						<p>24, R K Desai Marg, Near Mission Hospital, Ram Nagar, Athwa Gate, Surat, Gujarat 395001</p>
-    						
-    					</div>
-    				</div>
-    				<div class="col-md-4">
-    					<div class="contact-info contact-phone">
-    						<i class="fa fa-phone"></i>
-    						<h4>Phone Number</h4>
-    						<a href="tel:+912612667591">+91 261 2667591</a>
-    						<a href="tel:+912612667595">+91 261 2667595</a>
-    					</div>
-    				</div>
-    				<div class="col-md-4 pr-0">
-    					<div class="contact-info contact-email">
-    						<i class="fa fa-envelope"></i>
-    						<h4>Email Address</h4>
-    						<a href="mailto:president@metasofsda.in"><p>president@metasofsda.in</p></a>
-    						<a href="mailto:info@metasofsda.in"><p>info@metasofsda.in</p></a>
-        				</div>
-        			</div>
-        		</div>
-                <div class="row contact-address-section">
-                    <div class="col-md-6">
-                        <div id="googleMap">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.237295173405!2d72.807256564248!3d21.182730387881556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e714b6210a7%3A0xaaaca403f2b8f6a7!2sMETAS%20of%20Seventh%20Day%20Adventists%20School!5e0!3m2!1sen!2sin!4v1595648797269!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                        </div>
-                    </div>
-    				<div class="col-md-6 pl-0">
-                        <div class="contact-comment-section">
-                            <h3>Contact Form</h3>
-                            <div id="form-messages"></div>
-                            <form id="contact-form" method="post" action="mailer.php">
-                                <fieldset>
-                                    <div class="row">                                      
-                                        <div class="col-md-6 col-sm-12">
-                                            <div class="form-group">
-                                                <label>First Name*</label>
-                                                <input name="fname" id="fname" class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12">
-                                            <div class="form-group">
-                                                <label>Last Name*</label>
-                                                <input name="lname" id="lname" class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12">
-                                            <div class="form-group">
-                                                <label>Email*</label>
-                                                <input name="email" id="email" class="form-control" type="email">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12">
-                                            <div class="form-group">
-                                                <label>Subject *</label>
-                                                <input name="subject" id="subject" class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row"> 
-                                        <div class="col-md-12 col-sm-12">    
-                                            <div class="form-group">
-                                                <label>Message *</label>
-                                                <textarea cols="40" rows="5" id="message" name="message" class="textarea form-control"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>							        
-                                    <div class="form-group mb-0">
-                                        <input class="btn-send" type="submit" value="Submit Now">
-                                    </div>
-                                    
-                                </fieldset>
-                            </form>						
-                        </div>
-                    </div>
-                    
+<div class="rs-breadcrumbs bg7 breadcrumbs-overlay" style="background: url(page/big_img/<?echo $image?>)">
+    <div class="breadcrumbs-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="page-title">
+                        <?echo $page_name ?>
+                    </h1>
+                    <ul>
+                        <li>
+                            <a class="active" href="./">Home</a>
+                        </li>
+                        <li>
+                            <?echo $page_name ?>
+                        </li>
+                    </ul>
                 </div>
-        	</div>
+            </div>
         </div>
+    </div>
+</div>
+<!-- Breadcrumbs End -->
 
-     
+
+<?
+        $sqlContact = $cn->selectdb("SELECT `con_id`, `maptag`, `contact_desc`, `email`, `contact_no`, `opening_hours`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords` FROM  `tbl_contact` where con_id=1" );
+        //	echo $cn->numRows($sql2);
+        if ($cn->numRows($sqlContact) > 0) 
+        {
+            $rowContact = $cn->fetchAssoc($sqlContact);
+            extract($rowContact);
+        
+        ?>
+<div class="contact-page-section sec-spacer">
+    <div class="container">
+
+        <div class="row contact-address-section">
+            <div class="col-md-4 pl-0">
+                <div class="contact-info contact-address">
+                    <i class="fa fa-map-marker"></i>
+                    <h4>Address</h4>
+                    <p>
+                        <?echo strip_tags($contact_desc) ?>
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-info contact-phone">
+                    <i class="fa fa-phone"></i>
+                    <h4>Phone Number</h4>
+                    <?
+                            foreach(explode(',',$contact_no) as $contact)
+                            {
+                            ?>
+                    <a href="tel:<?echo $contact?>">
+                        <?echo $contact?></a>
+                    <?
+                            }
+                            ?>
+                </div>
+            </div>
+            <div class="col-md-4 pr-0">
+                <div class="contact-info contact-email">
+                    <i class="fa fa-envelope"></i>
+                    <h4>Email Address</h4>
+                    <?
+                            foreach(explode(',',$email) as $email_id)
+                            {
+                            ?>
+                    <a href="mailto:<?echo $email_id?>">
+                        <p>
+                            <?echo $email_id?>
+                        </p>
+                    </a>
+                    <?
+                            }
+                            ?>
+                </div>
+            </div>
+        </div>
+        <div class="row contact-address-section">
+            <div class="col-md-6">
+                <div id="googleMap">
+                    <?echo $maptag ?>
+                </div>
+            </div>
+            <div class="col-md-6 pl-0">
+                <div class="contact-comment-section">
+                    <h3>Contact Form</h3>
+                    <div id="form-messages"></div>
+                    <form id="contactForm" method="post">
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Name*</label>
+                                        <input required name="name" id="name" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Contact number*</label>
+                                        <input name="contact" id="contact" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Email*</label>
+                                        <input required name="email" id="email" class="form-control" type="email">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subject *</label>
+                                        <input required name="subject" id="subject" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Verification code*</label>
+                                        <input class="form-control" type="text" placeholder="Code" name="verif_box"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Code</label>
+                                        <img class="form-control" style="width:100px;height:43px"
+                                            src="verificationimage.php?<?php echo rand(0,9999);?>"
+                                            alt="verification image, type it in the box" width="50px" height="43px"
+                                            align="absbottom" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Message *</label>
+                                        <textarea required cols="40" rows="5" id="message" name="message"
+                                            class="textarea form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <img src="./images/loader.gif" class="loader_img"
+                                        style="width:30px; display:none" />
+                                    <div id="result_contactForm"></div>
+
+                                </div>
+                            </div>
+                            <div class="form-group mb-0">
+                                <input class="btn-send btn_submit_contact" type="submit" value="Submit Now">
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<?
+        }
+        ?>
+
+
 <?php include 'footer.php' ?>
+<script src="js/forms.js"></script>

@@ -8,6 +8,12 @@ $(document).ready(function () {
 	var arrow_span = '<span class="rs-menu-parent">' + arrow_down + '</span>';
 	var close_button = '<div class="sub-menu-close"><i class="fa fa-times" aria-hidden="true"></i>Close</div>';
 	
+	// sub child click
+	$(".sub-item-has-children").click((e)=>{
+		// alert(e.find(".sub-item-children").html());
+
+	});
+
 	//Insert all arrow down span element
 	$('.nav-menu .rs-mega-menu').append(arrow_span);
 	$('.nav-menu > .menu-item-has-children').append(arrow_span);

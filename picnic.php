@@ -1,101 +1,76 @@
-<?php $page_id=''; include 'header.php' ?> 
+<?
+$page_id = 44;
+include_once("header.php");
+$sql = $cn->selectdb("select * from tbl_page where page_id =$page_id");
+$row = $cn->fetchAssoc($sql);
+extract($row);
+?>
 
 
 
 <!-- Breadcrumbs Start -->
-<div class="rs-breadcrumbs bg7 breadcrumbs-overlay">
-		    <div class="breadcrumbs-inner">
-		        <div class="container">
-		            <div class="row">
-		                <div class="col-md-12 text-center">
-		                    <h1 class="page-title">PICNICS</h1>
-		                    <ul>
-		                        <li>
-		                            <a class="active" href="index.php">Home</a>
-		                        </li>
-		                        <li>Picnics</li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-		<!-- Breadcrumbs End -->
+<div class="rs-breadcrumbs bg7 breadcrumbs-overlay" style="background: url(page/big_img/<?echo $image?>)">
+    <div class="breadcrumbs-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="page-title">
+                        <?echo $page_name ?>
+                    </h1>
+                    <ul>
+                        <li>
+                            <a class="active" href="./">Home</a>
+                        </li>
+                        <li>
+                            <a class="active" href="javascript:void(0)">School Life</a>
+                        </li>
+                        <li>
+                            <?echo $page_name ?>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumbs End -->
 
 
-        <div id="rs-products" class="rs-products sec-spacer sec-color">
-			<div class="container">
-				
-				<div class="row">
+<div id="rs-products" class="rs-products sec-spacer sec-color">
+    <div class="container">
+        
+        <?
+        $sqlAB1 = $cn->selectdb("SELECT picnic_id FROM tbl_picnic  LIMIT 1");
+        if( $cn->numRows($sqlAB1) > 0 )
+        {
+            
+        ?>
+		<div class="row" id="results">
 
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-img" style="padding:0 10px">
-                                <a href="#">
-                                    <img src="img/shop/4.jpg" alt="" />
-                                </a>
-                            </div>
-                            <h4 class="product-title"><a href="shop-details.html">Picnic 2019</a></h4>                           
-                            <div class="product-btn">
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-img" style="padding:0 10px">
-                                <a href="#">
-                                    <img src="img/shop/2.jpg" alt="" />
-                                </a>
-                            </div>
-                            <h4 class="product-title"><a href="shop-details.html">Picnic 2019</a></h4>                           
-                            <div class="product-btn">
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-img" style="padding:0 10px">
-                                <a href="#">
-                                    <img src="img/shop/1.jpg" alt="" />
-                                </a>
-                            </div>
-                            <h4 class="product-title"><a href="shop-details.html">Picnic 2019</a></h4>                           
-                            <div class="product-btn">
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-img" style="padding:0 10px">
-                                <a href="#">
-                                    <img src="img/shop/3.jpg" alt="" />
-                                </a>
-                            </div>
-                            <h4 class="product-title"><a href="shop-details.html">Picnic 2019</a></h4>                           
-                            <div class="product-btn">
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    
-                    
-				</div>
+            
+        </div>
+		<?
+		}
+		else
+		{
+		?>
+			<div class="row text-center">
+                <h2>No record found.</h2>
+            </div>
+		<?
+		}
+		?>
+        <div>
+			<div  style="width:100%; text-align: center;height:30px">
+				<img style="display:none;width:30px;" id="loader_image"
+					src="./images/loader.gif" />
 			</div>
-		</div>
+        </div>
+
+        
+    </div>
+</div>
 
 
 <?php include 'footer.php' ?>
-
-
+<script src="js/scroll.js" id="helper" cat_id="0" file-name="getpicnics.php" limit="20" pid="0"></script>

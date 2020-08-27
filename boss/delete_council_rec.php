@@ -15,26 +15,26 @@ $cn->connectdb();
 	
 	// second product table 
 	$sql=  $cn->selectdb("select * from tbl_council where product_id=$id");
-	while($row = mysqli_fetch_row($sql))
+	while($row = mysqli_fetch_array($sql))
 	{
 		//image
-		@unlink('../council/big_img/'.$row[4]);
-		@unlink('../council/'.$row[4]);
+		// @unlink('../council/big_img/'.$row[4]);
+		// @unlink('../council/'.$row[4]);
 		//end of image
 		
 		// pdf
-		@unlink('../download_pdf/'.$row[7]);
+		@unlink('../download_pdf/'.$row['pdf_file']);
 		
 		//multiple images
-		$image_list = explode(',',$row[11]);
+		// $image_list = explode(',',$row[11]);
 
-		foreach($image_list as $rowF)
-		{
-			//print_r($image_list);die;
-			$new_image_list = '';
-			@unlink('../councilF/big_img/'.$rowF);
-			@unlink('../councilF/'.$rowF);
-		}
+		// foreach($image_list as $rowF)
+		// {
+		// 	//print_r($image_list);die;
+		// 	$new_image_list = '';
+		// 	@unlink('../councilF/big_img/'.$rowF);
+		// 	@unlink('../councilF/'.$rowF);
+		// }
 		
 		
 		
@@ -55,26 +55,26 @@ $cn->connectdb();
 	
 	// second product table 
 	$sql=  $cn->selectdb("select * from tbl_council where product_id=$id");
-	while($row = mysqli_fetch_row($sql))
+	while($row = mysqli_fetch_array($sql))
 	{
 		//image
-		@unlink('../council/big_img/'.$row[4]);
-		@unlink('../council/'.$row[4]);
+		// @unlink('../council/big_img/'.$row[4]);
+		// @unlink('../council/'.$row[4]);
 		//end of image
 		
 		// pdf
-		@unlink('../download_pdf/'.$row[7]);
+		@unlink('../download_pdf/'.$row['pdf_file']);
 		
 		//multiple images
-		$image_list = explode(',',$row[11]);
+		// $image_list = explode(',',$row[11]);
 
-		foreach($image_list as $rowF)
-		{
-			//print_r($image_list);die;
-			$new_image_list = '';
-			@unlink('../councilF/big_img/'.$rowF);
-			@unlink('../councilF/'.$rowF);
-		}
+		// foreach($image_list as $rowF)
+		// {
+		// 	//print_r($image_list);die;
+		// 	$new_image_list = '';
+		// 	@unlink('../councilF/big_img/'.$rowF);
+		// 	@unlink('../councilF/'.$rowF);
+		// }
 		
 		
 		

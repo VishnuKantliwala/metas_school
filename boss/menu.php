@@ -44,10 +44,53 @@
                             </li>
 
                             <li>
+                                <a href="magazineView.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Crescent Magazine </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> School Life </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="curriculumView.php">Curriculum</a></li>
+                                    <li><a href="houseView.php">Houses </a></li>                                   
+                                    <li><a href="sportView.php">Sports </a></li>                                   
+                                    <li><a href="bandView.php">Bands </a></li>                                   
+                                    <li><a href="tripView.php">Trips </a></li> 
+                                    <li><a href="picnicView.php">Picnics </a></li>                                   
+                                    <li><a href="tourView.php">Tours </a></li>                                   
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <a href="courseView.php">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Courses </span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="homeVideo.php">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Home Video </span>
                                 </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Alumni </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="alumniView.php"> Alumni </a></li>
+                                    <li><a href="alumniRequestView.php"> Registers </a></li>
+                                </ul>
                             </li>
 
                             <li>

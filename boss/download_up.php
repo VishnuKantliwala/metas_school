@@ -250,12 +250,44 @@ $finalarray= array_filter($arraycat_id);
                                     
                                     <div class="form-group">
                                         <label for="inputEmail3" class="col-sm-12 control-label">PDF File</label>
+                                        <input type="hidden" class="form-control" id="frontpdf" name="frontpdf" placeholder="Multiple pdfs" value="<? echo $row['pdf_file']; ?>">
+                                        <div class="row">
                                         <div class="col-sm-12">
-                                            <input type="file" id="download_file" name="download_file" class="dropify" data-default-file="<? if($row[6]!=''){echo "../download_pdf/".$row[6];}?>" />
-                                            <? if($row[6]!=''){?>
-                                                <a href="download_upload.php?id=<?php echo $row[0]; ?>&PDF=Del" class="btn btn-lighten-danger" onClick="return confirm('Are you sure want to delete?');">Delete</a>
-                                            <? } ?>
-                                            <input type="hidden" id="frontimgpdf2" name="frontimgpdf2" value="<?php echo $row[6]?>"  />
+                                            <input type="file" id="download_file" name="download_file[]" class="dropify" multiple />
+                                            <div class="attached-files mt-4">
+                                                <div class="task-tags mt-2">
+                                                    <h5>PDF's</h5>
+                                                    <?
+                                                    if(isset($_GET["download_id"]))
+                                                    {
+                                                        $pdf = $row['pdf_file'];
+                                                        
+                                                        if($pdf!="" || $pdf!=NULL)
+                                                        {
+                                                            $pdf_list = explode(',',$pdf);
+                                                            $cnt = 1;
+                                                                
+                                                            for($i=0;$i<count($pdf_list)-1;$i++)
+                                                            {
+                                                    ?>
+                                                                <div class="bootstrap-tagsinput">
+                                                                    <span class="tag label label-info bg-light">
+                                                                        <div class=" custom-control custom-switch">
+                                                                            <input class="custom-control-input" type="checkbox" id="<?php echo $pdf_list[$i]; ?>" name="pdfEdit[]" value="<?php echo $pdf_list[$i]; ?>">
+                                                                            <label class="custom-control-label" for="<?php echo $pdf_list[$i]; ?>"><?echo $pdf_list[$i];?></label>
+                                                                        </div>
+                                                                    </span>
+                                                                </div>
+                                                    <?php
+                                                            }
+                                                            echo '<div class="row mt-2 mb-2"><div class="col-12"><input type="submit" class="btn btn-lighten-danger" name="btnDeletepdfs" value="Delete Selected pdfs"></div></div>';
+                                                        }
+                                                    }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="frontimgpdf2" name="frontimgpdf2" value="<?php echo $row['pdf_file']?>" />
+                                        </div>
                                         </div>
                                     </div>
                                     

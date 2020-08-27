@@ -90,39 +90,39 @@ else{
 						?>
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-        <meta charset="utf-8" />
-        <title>Master Admin</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <!-- App favicon -->
-                <?$sqlF = $cn->selectdb("select * from tbl_favicon where fav_id= 1 ");
+    <meta charset="utf-8" />
+    <title>Master Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <?$sqlF = $cn->selectdb("select * from tbl_favicon where fav_id= 1 ");
             $rowF = mysqli_fetch_assoc($sqlF);
         ?>
-        <link rel="<?echo $rowF['relation'];?>" href="../favicon/big_img/<?echo $rowF['image_name'];?>" />
+    <link rel="<?echo $rowF['relation'];?>" href="../favicon/big_img/<?echo $rowF['image_name'];?>" />
 
 
-        <!--Morris Chart-->
-        <!-- <link rel="stylesheet" href="assets/libs/morris-js/morris.css" /> -->
+    <!--Morris Chart-->
+    <!-- <link rel="stylesheet" href="assets/libs/morris-js/morris.css" /> -->
 
-        <!-- Plugins css -->
-        <!-- <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+    <!-- Plugins css -->
+    <!-- <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
         <link href="assets/libs/switchery/switchery.min.css" rel="stylesheet" type="text/css" /> -->
 
 
-        <!-- dropify -->
-        <link href="assets/libs/dropify/dropify.min.css" rel="stylesheet" type="text/css" />
+    <!-- dropify -->
+    <link href="assets/libs/dropify/dropify.min.css" rel="stylesheet" type="text/css" />
 
-        <!-- Treeview css -->
-        <link href="assets/libs/treeview/style.css" rel="stylesheet" type="text/css" />
+    <!-- Treeview css -->
+    <link href="assets/libs/treeview/style.css" rel="stylesheet" type="text/css" />
 
-        <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/app.min.css?v=<?echo time();?>" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css?v=<?echo time();?>" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -132,17 +132,18 @@ else{
         <!-- Topbar Start -->
         <div class="navbar-custom">
 
-                <!-- LOGO -->
-                <div class="logo-box">
-                    <a href="index.php" class="logo text-center">
-                        <span class="logo-lg">
+            <!-- LOGO -->
+            <div class="logo-box">
+                <a href="index.php" class="logo text-center">
+                    <span class="logo-lg">
                         <?$sqlL = $cn->selectdb("select * from tbl_logo where logo_id= 1 ");
                             $rowL = mysqli_fetch_assoc($sqlL);
                         ?>
-                            <img src="<?if($rowL['image_name']!=''){echo "../logo/big_img/".$rowL['image_name'];}?>" alt="" height="16">
-                        </span>
-                    </a>
-                </div>
+                        <img src="<?if($rowL['image_name']!=''){echo " ../logo/big_img/".$rowL['image_name'];}?>" alt=""
+                        height="16">
+                    </span>
+                </a>
+            </div>
 
             <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
                 <li>
@@ -154,7 +155,7 @@ else{
                 <li>
                     <h4 class="page-title-main"> Council Circulars (CISCE) </h4>
                 </li>
-    
+
             </ul>
         </div>
         <!-- end Topbar -->
@@ -176,134 +177,155 @@ else{
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <h4 class="mt-0 header-title">  Council Circulars (CISCE) </h4>
+                                <h4 class="mt-0 header-title"> Council Circulars (CISCE) </h4>
                                 <form class="form-horizontal" method="post" action="council_upload.php" id="myform"
-                                        name="myform" enctype="multipart/form-data">
+                                    name="myform" enctype="multipart/form-data">
 
 
-                                        <div class="form-group" style="display:none">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Category List</label>
-                                            <div class="col-sm-12">
-                                                <div class="panel-body">
-                                                    <div id="basicTree">
-                                                        <ul>
-                                                            <li data-jstree='{"opened":true}'>Category List 
-                                                                <?php generate_menu(0);?>
-                                                            </li>
-                                                        </ul>
-                                                        <script>
-                                                            menu_initiate();
-                                                        </script>
-                                                    </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Category List</label>
+                                        <div class="col-sm-12">
+                                            <div class="panel-body">
+                                                <div id="basicTree">
+                                                    <ul>
+                                                        <li data-jstree='{"opened":true}'>Category List
+                                                            <?php generate_menu(0);?>
+                                                        </li>
+                                                    </ul>
+                                                    <script>
+                                                    menu_initiate();
+                                                    </script>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Slug</label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Slug</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="slug" name="slug"
+                                                placeholder="Slug">
                                         </div>
+                                    </div>
 
-                                        <div class="form-group" style="display:none">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Date</label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="date" name="date" placeholder="Date">
-                                            </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Date</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="date" name="date"
+                                                placeholder="Date">
                                         </div>
-                                        <div class="form-group" style="display:none">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Month</label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="month" name="month" placeholder="Month">
-                                            </div>
+                                    </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Month</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="month" name="month"
+                                                placeholder="Month">
                                         </div>
-                                        <div class="form-group" style="display:none">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Year</label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="year" name="year" placeholder="Year">
-                                            </div>
+                                    </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Year</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="year" name="year"
+                                                placeholder="Year">
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Council Circulars (CISCE) </label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Council Circulars (CISCE)">
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Council Circulars
+                                            (CISCE) </label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="product_name"
+                                                name="product_name" placeholder="Council Circulars (CISCE)">
                                         </div>
+                                    </div>
 
-                                        <div class="form-group" style="display:none">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Overview</label>
-                                            <div class="col-sm-12">
-                                                <textarea class="ckeditor" cols="80" id="description" name="description" rows="10"></textarea>
-                                            </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Overview</label>
+                                        <div class="col-sm-12">
+                                            <textarea class="ckeditor" cols="80" id="description" name="description"
+                                                rows="10"></textarea>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group" style="display:none">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Image</label>
-                                            <div class="col-sm-4">
-                                                <input type="file" id="frontimg" name="frontimg" class="dropify"/>
-                                            </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Image</label>
+                                        <div class="col-sm-4">
+                                            <input type="file" id="frontimg" name="frontimg" class="dropify" />
                                         </div>
+                                    </div>
 
-                                        <div class="form-group" style="display:none">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Multiple
-                                                Images</label>
-                                            <div class="col-sm-4">
-                                                <input type="file" id="image_title" name="image_title[]" multiple  class="dropify"/>
-                                            </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Multiple
+                                            Images</label>
+                                        <div class="col-sm-4">
+                                            <input type="file" id="image_title" name="image_title[]" multiple
+                                                class="dropify" />
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">PDF File</label>
-                                            <div class="col-sm-12">
-                                                <input type="file" id="download_file" name="download_file[]" class="dropify" accept="application/pdf" multiple />
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-12 control-label">PDF File</label>
+                                        <div class="col-sm-12">
+                                            <input type="file" id="download_file" name="download_file"
+                                                accept="application/pdf" class="dropify" />
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label"><span style="color:#F00; font-weight:bold;">*</span> Meta Tag Title</label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="meta_tag_title" name="meta_tag_title" placeholder="Meta Tag Title">
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label"><span
+                                                style="color:#F00; font-weight:bold;">*</span> Meta Tag Title</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="meta_tag_title"
+                                                name="meta_tag_title" placeholder="Meta Tag Title">
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Meta Tag Description</label>
-                                            <div class="col-sm-12">
-                                                <textarea cols="5" rows="5" class="form-control" id="meta_tag_description" name="meta_tag_description" placeholder="Meta Tag Description"></textarea>
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Meta Tag
+                                            Description</label>
+                                        <div class="col-sm-12">
+                                            <textarea cols="5" rows="5" class="form-control" id="meta_tag_description"
+                                                name="meta_tag_description"
+                                                placeholder="Meta Tag Description"></textarea>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Meta Tag Keywords</label>
-                                            <div class="col-sm-12">
-                                                <textarea cols="5" rows="5" class="form-control" id="meta_tag_keywords" name="meta_tag_keywords" placeholder="Meta Tag Keywords"></textarea>
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Meta Tag
+                                            Keywords</label>
+                                        <div class="col-sm-12">
+                                            <textarea cols="5" rows="5" class="form-control" id="meta_tag_keywords"
+                                                name="meta_tag_keywords" placeholder="Meta Tag Keywords"></textarea>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group" style="display:none">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Product Video</label>
-                                            <div class="col-sm-12">
-                                                <textarea cols="5" rows="5" class="form-control" id="product_video" name="product_video" placeholder="Embeded code of the video"></textarea>
-                                            </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Product Video</label>
+                                        <div class="col-sm-12">
+                                            <textarea cols="5" rows="5" class="form-control" id="product_video"
+                                                name="product_video" placeholder="Embeded code of the video"></textarea>
                                         </div>
-                                        
-                                        <div class="form-group" style="display:none">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Product Map</label>
-                                            <div class="col-sm-12">
-                                                <textarea cols="5" rows="5" class="form-control" id="product_map" name="product_map" placeholder="Embeded code of the Map"></textarea>
-                                            </div>
-                                        </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" name="addProduct" id="addProduct" class="btn btn-success">Add</button>
-                                                <button type="submit" name="myButton" id="myButton" class="btn btn-lighten-danger" onClick="window.location.href='councilView.php'; return false;">Cancel</button>
-                                            </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Product Map</label>
+                                        <div class="col-sm-12">
+                                            <textarea cols="5" rows="5" class="form-control" id="product_map"
+                                                name="product_map" placeholder="Embeded code of the Map"></textarea>
                                         </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" name="addProduct" id="addProduct"
+                                                class="btn btn-success">Add</button>
+                                            <button type="submit" name="myButton" id="myButton"
+                                                class="btn btn-lighten-danger"
+                                                onClick="window.location.href='councilView.php'; return false;">Cancel</button>
+                                        </div>
+                                    </div>
                                 </form>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -322,20 +344,20 @@ else{
 
     <!-- form-upload init -->
     <script src="assets/js/pages/form-fileupload.init.js"></script>
-    
+
     <!-- ckeditor -->
     <script src="assets/libs/ckeditor/ckeditor.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
-    
+
     <!-- Init js-->
     <script src="assets/js/pages/form-advanced.init.js"></script>
-    
+
     <!-- Tree view js -->
     <script src="assets/libs/treeview/jstree.min.js?v=<?echo time();?>"></script>
     <script src="assets/js/pages/treeview.init.js?v=<?echo time();?>"></script>
-    
+
 
 </body>
 

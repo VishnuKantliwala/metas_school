@@ -13,7 +13,7 @@ class connect {
 private $_host = "localhost";
 	private $_username = "root";
 	private $_password = "";
-	public $_database = "iced_metas_s";
+	public $_database = "metas_school_db";
 	/*
 	Get an instance of the Database
 	@return Instance
@@ -88,6 +88,90 @@ private $_host = "localhost";
             
         }
 	}
+	public function getMenu($cat_id, $categories_link="" , $products_link = "", $product_link = "", $isProduct, $category_table, $product_table, $product_name_field)
+    {
+		if($cat_id!=0)
+		{
+			$sql =$this->selectdb("SELECT slug,cat_name,cat_id FROM  `".$category_table."` where cat_id=".$cat_id);
+			$row=$this->fetchAssoc($sql);
+		}
+		
+		$sqlSub =$this->selectdb("SELECT cat_id FROM `".$category_table."` where cat_parent_id=".$cat_id);
+		$sqlC=$this->selectdb("select ".$product_name_field.",slug from ".$product_table." where cat_id like '%".$cat_id."%' ");
+		
+
+		
+
+		if($cat_id!=0)
+		{
+			if($this->numRows($sqlC)>0)
+			{
+				if($products_link != "")
+				{
+					$href=$products_link.urlencode($row['slug']);
+				}
+				else
+				{
+					$href = "javascript:void(0)";
+				}
+			}
+				
+			else
+			{
+				if($categories_link != "")
+				{
+					$href=$categories_link.urlencode($row['slug']);
+				}
+				else
+				{
+					$href = "javascript:void(0)";
+				}
+			}
+			echo "<li  ><a  href='".$href."'>".$row['cat_name']."</a>";
+		}
+
+		if($this->numRows($sqlSub)>0)
+		{	
+			if($cat_id!=0)
+				echo "<ul class='sub-menu subtosub'>";
+			while($rowSub = $this->fetchAssoc($sqlSub))
+				$this->getMenu($rowSub['cat_id'], $categories_link, $products_link, $product_link, $isProduct,  $category_table, $product_table, $product_name_field);
+			if($cat_id!=0)
+				echo "</ul>";
+		}
+		else
+		{
+			if($isProduct)
+			{
+				if( $this->numRows($sqlC) > 0 )
+				{
+					echo "<ul class='sub-menu subtosub'>";
+					while($rowC=$this->fetchAssoc($sqlC))
+					{
+						if($product_link != "")
+						{
+							$href=$product_link.urlencode($rowC['slug']);
+						}
+						else
+						{
+							$href = "javascript:void(0)";
+						}
+						echo '<li><a href="'.$href.'">'.$rowC[''.$product_name_field].'</a></li>';
+					}
+					echo "</ul>";               
+					
+				}
+			}
+		}
+
+		if($cat_id!=0)
+		{
+		echo "</li>";
+		
+		}
+		
+	}
+	
 	public function selectdb($qry)
 	{
 		$rs=mysqli_query($this->_connection, $qry);

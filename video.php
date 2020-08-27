@@ -1,26 +1,37 @@
-<?php $page_id=''; include 'header.php' ?> 
+<?
+$page_id = 24;
+include_once("header.php");
+$sql = $cn->selectdb("select * from tbl_page where page_id =$page_id");
+$row = $cn->fetchAssoc($sql);
+extract($row);
+?>
 
 
 
 <!-- Breadcrumbs Start -->
-<div class="rs-breadcrumbs bg7 breadcrumbs-overlay">
-		    <div class="breadcrumbs-inner">
-		        <div class="container">
-		            <div class="row">
-		                <div class="col-md-12 text-center">
-		                    <h1 class="page-title">Videos</h1>
-		                    <ul>
-		                        <li>
-		                            <a class="active" href="index.php">Home</a>
-		                        </li>
-		                        <li>Videos</li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-		<!-- Breadcrumbs End -->
+<div class="rs-breadcrumbs bg7 breadcrumbs-overlay" style="background: url(page/big_img/<?echo $image?>)">
+    <div class="breadcrumbs-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="page-title">
+                        <?echo $page_name ?>
+                    </h1>
+                    <ul>
+                        <li>
+                            <a class="active" href="./">Home</a>
+                        </li>
+                        <li>
+                            <?echo $page_name ?>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumbs End -->
+
 
 
     <div id="rs-testimonial-3" class="rs-testimonial-3 pt-20 pb-40 sec-color">
@@ -29,25 +40,9 @@
             <div class="row">
                 <div class="col-md-12">
                    
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 pt-20">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/jJP84-ajiTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="col-md-4 pt-20">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/jJP84-ajiTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="col-md-4 pt-20">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/jJP84-ajiTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="col-md-4 pt-20">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/jJP84-ajiTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="col-md-4 pt-20">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/jJP84-ajiTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="col-md-4 pt-20">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/jJP84-ajiTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
+                    <div class="row justify-content-center" id="results">
+                        
+                        
                         
                     </div>
                 </div>
@@ -56,3 +51,4 @@
     </div>
 
 <?php include 'footer.php' ?>
+<script src="js/scroll.js" id="helper" cat_id="0" file-name="getvideos.php" limit="12" pid="0"></script>

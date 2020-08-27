@@ -73,7 +73,7 @@ $con->connectdb();
 			//pdf
 			//-----------------------------
 			
-			$pdf_file = createPDF('download_file', "../download_pdf/");
+			$pdf_file = createMultiPDF('download_file', "../download_pdf/");	
 			
 			//--------------------		
 			//end of pdf
@@ -182,25 +182,55 @@ $con->connectdb();
 			//pdf
 			//------------------------
 			
-			if($_FILES["download_file"]["error"]>0)
-				{
+			// if($_FILES["download_file"]["error"]>0)
+			// 	{
 				
-					$con->insertdb("UPDATE `tbl_download` SET download_name='".$download_name."',description='".$description."',cat_id='".$catID."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."',pdf_file='".$frontimgpdf2."'  where download_id='".$download_id."'");
-				}
-				else
-				{
+			// 		$con->insertdb("UPDATE `tbl_download` SET download_name='".$download_name."',description='".$description."',cat_id='".$catID."', meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."',pdf_file='".$frontimgpdf2."'  where download_id='".$download_id."'");
+			// 	}
+			// 	else
+			// 	{
 				
-				@unlink("../download_pdf/". $frontimgpdf2);
+			// 	@unlink("../download_pdf/". $frontimgpdf2);
 
-				$pdf_file = createPDF('download_file',"../download_pdf/");
+			// 	$pdf_file = createPDF('download_file',"../download_pdf/");
 
-				$con->insertdb("UPDATE `tbl_download` SET download_name='".$download_name."',description='".$description."',cat_id='".$catID."',pdf_file='".$pdf_file."' ,meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where download_id='".$download_id."'");
-				}
+			// 	$con->insertdb("UPDATE `tbl_download` SET download_name='".$download_name."',description='".$description."',cat_id='".$catID."',pdf_file='".$pdf_file."' ,meta_tag_title='".$meta_tag_title."',meta_tag_description='".$meta_tag_description."',meta_tag_keywords='".$meta_tag_keywords."',slug='".$slug."' where download_id='".$download_id."'");
+			// 	}
 
 			 		
 			//-----------------				
 			//end of pdf
 			//--------------------
+
+			//-----------------				
+			//multi pdf
+			//--------------------
+						
+			$size_sum_pdf = array_sum($_FILES['download_file']['size']);
+			// echo "size sum pdf => ".$size_sum_pdf;
+			// echo "hey im here";
+			if ($size_sum_pdf > 0) 
+			// if($_FILES["download_file"]["name"]=="")
+			{
+				$pdf_file = createMultiPDF('download_file', "../download_pdf/");
+				$records=$con->selectdb("select * from tbl_download where download_id='".$download_id."'");
+				$row=mysqli_fetch_assoc($records);
+				print_r($row);
+				//echo $row[2]."<br>";
+				//echo $images; die;
+				// echo $row['pdf_file'];
+				$final= $row['pdf_file'].$pdf_file;
+				
+				
+				$con->insertdb("UPDATE `tbl_download` SET  pdf_file='".$final."'  where download_id='".$download_id."'");
+			}
+
+			 		
+			 		
+			//-----------------				
+			//end of multi pdf
+			//--------------------
+			
 			
 			
 			
@@ -258,5 +288,32 @@ if(isset($_GET["PDF"]))
 
 
 }	
+//multiple pdf delete Product..
+if(isset($_REQUEST["btnDeletepdfs"]))
+{
+	$download_id = $_POST['download_id'];
+	$page = $_POST['page'];
+
+	$pdf = $_POST['frontpdf'];
+	$pdf_list = explode(',',$pdf);
+	$new_pdf_list = '';
+	
+	if(isset($_REQUEST["pdfEdit"]))
+	{
+		foreach($_REQUEST['pdfEdit'] as $row)
+		{
+			 $pdf = str_replace($row.',' , '' ,$pdf);
+			 @unlink('../download_pdf/'.$row);
+		}
+		
+		$con->selectdb("update tbl_download set pdf_file='".$pdf."' where download_id = '".$download_id."'");
+		header("location: download_up.php?download_id=".$download_id."&page=".$page);
+	}
+	else
+	{
+		echo 'No pdf selected';
+	}
+		
+}
 
 ?>
